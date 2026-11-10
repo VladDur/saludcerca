@@ -1,0 +1,3 @@
+00:00 +0: loading /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart
+00:00 +0: Login -> Inicio -> Detalle
+00:01 +1: All tests passed!

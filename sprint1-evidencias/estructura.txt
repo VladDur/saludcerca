@@ -1,0 +1,11 @@
+lib/data/centros_ejemplo.dart
+lib/main.dart
+lib/models/centro_salud.dart
+lib/screens/detalle_centro_screen.dart
+lib/screens/home_screen.dart
+lib/screens/login_screen.dart
+lib/theme/app_theme.dart
+lib/widgets/centro_card.dart
+lib/widgets/etiqueta_estado.dart
+lib/widgets/fila_info.dart
+test/widget_test.dart
