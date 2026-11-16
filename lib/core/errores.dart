@@ -6,6 +6,12 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 /// Convierte cualquier excepción en un mensaje claro en español.
 String mensajeError(Object error) {
   if (error is AuthException) {
+    // Primero los fallos de red: su texto incluye la URL
+    // (".../token?grant_type=password") y no deben confundirse con la clave.
+    if (error is AuthRetryableFetchException ||
+        (error.statusCode == null && _pareceRed(error.message))) {
+      return _sinConexion;
+    }
     final m = error.message.toLowerCase();
     if (m.contains('invalid login')) return 'Correo o contraseña incorrectos.';
     if (m.contains('email not confirmed')) {
@@ -17,13 +23,13 @@ String mensajeError(Object error) {
     if (m.contains('rate limit')) {
       return 'Demasiados intentos. Espera unos minutos y vuelve a intentar.';
     }
-    if (m.contains('password')) {
+    if (error is AuthWeakPasswordException ||
+        m.contains('password should be')) {
       return 'La contraseña no cumple los requisitos.';
     }
     if (m.contains('sesión expirada') || m.contains('jwt')) {
       return 'Tu sesión expiró. Vuelve a iniciar sesión.';
     }
-    if (error is AuthRetryableFetchException) return _sinConexion;
     return 'No se pudo completar: ${error.message}';
   }
   if (error is PostgrestException) {
@@ -43,3 +49,11 @@ String mensajeError(Object error) {
 
 const _sinConexion =
     'Sin conexión a internet. Revisa tu red e intenta otra vez.';
+
+bool _pareceRed(String m) {
+  final t = m.toLowerCase();
+  return t.contains('socket') ||
+      t.contains('failed host lookup') ||
+      t.contains('clientexception') ||
+      t.contains('connection');
+}

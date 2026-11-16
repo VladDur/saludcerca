@@ -68,7 +68,7 @@ Para iOS: `flutter build ios --dart-define-from-file=env.json` (requiere Xcode y
 
 ```bash
 flutter analyze   # análisis estático
-flutter test      # 26 pruebas unitarias y de widgets (sin internet, repositorios falsos)
+flutter test      # 29 pruebas unitarias y de widgets (sin internet, repositorios falsos)
 ```
 
 Prueba **end-to-end contra Supabase real** (login, consultas, CRUD, RLS, HU‑06, modo oscuro),

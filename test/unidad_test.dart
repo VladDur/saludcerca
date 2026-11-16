@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:saludcerca/core/errores.dart';
 import 'package:saludcerca/core/validadores.dart';
 import 'package:saludcerca/models/centro_salud.dart';
 import 'package:saludcerca/models/recordatorio.dart';
 import 'package:saludcerca/settings/ajustes_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:supabase_flutter/supabase_flutter.dart'
+    show AuthException, AuthRetryableFetchException, AuthWeakPasswordException;
 
 void main() {
   group('Validadores de formularios', () {
@@ -109,6 +112,26 @@ void main() {
       expect(b.textoGrande, isTrue);
       expect(b.altoContraste, isTrue);
       expect(b.modoTema, ThemeMode.dark);
+    });
+  });
+
+  group('Mensajes de error de autenticación', () {
+    test('sin internet no se confunde con la contraseña', () {
+      final e = AuthRetryableFetchException(
+          message: 'ClientException with SocketException: Failed host lookup, '
+              'uri=https://x.supabase.co/auth/v1/token?grant_type=password');
+      expect(mensajeError(e), contains('Sin conexión'));
+    });
+    test('credenciales inválidas', () {
+      expect(mensajeError(const AuthException('Invalid login credentials')),
+          'Correo o contraseña incorrectos.');
+    });
+    test('contraseña débil al registrarse', () {
+      final e = AuthWeakPasswordException(
+          message: 'Password should be at least 6 characters',
+          statusCode: '422',
+          reasons: const ['length']);
+      expect(mensajeError(e), 'La contraseña no cumple los requisitos.');
     });
   });
 }

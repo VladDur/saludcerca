@@ -6,7 +6,7 @@ Generadas el 16/11/2026 contra el proyecto real de Supabase.
 |---|---|---|
 | `flutter_version.txt`, `dispositivos.txt` | Entorno: Flutter, emulador Android (Pixel 9, Android 17) y simulador iOS (iPhone 17, iOS 26.5) | 3.1 |
 | `flutter_analyze.txt` | Análisis estático sin problemas | 9 |
-| `flutter_test.txt` | 26 pruebas unitarias y de widgets en verde (validaciones, CRUD, auth, HU‑06, botones ≥ 48 dp / 44 pt, contraste) | 9.2, 9.4, 9.5 |
+| `flutter_test.txt` | 29 pruebas unitarias y de widgets en verde (validaciones, CRUD, auth, HU‑06, botones ≥ 48 dp / 44 pt, contraste) | 9.2, 9.4, 9.5 |
 | `prueba_e2e_ios.txt`, `prueba_e2e_android.txt` | Prueba end-to-end contra Supabase aprobada en ambas plataformas | 9.3 a 9.7 |
 | `prueba_rls_sin_sesion.txt` | Sin sesión (rol anon) la API rechaza todas las tablas | 7.8, 9.6 |
 

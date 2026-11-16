@@ -33,7 +33,13 @@ void main() {
         return;
       }
     }
-    throw TestFailure('No apareció: $f');
+    final visibles = find
+        .byType(Text)
+        .evaluate()
+        .map((e) => (e.widget as Text).data)
+        .whereType<String>()
+        .join(' | ');
+    throw TestFailure('No apareció: $f\nEn pantalla: $visibles');
   }
 
   Future<void> quieto(WidgetTester t, [int ms = 900]) async {
@@ -168,8 +174,8 @@ void main() {
         of: find.text('Tomar losartán'), matching: find.byType(Card));
     await tocar(
         t, find.descendant(of: tarjeta, matching: find.byTooltip('Editar')));
-    await t.enterText(find.byKey(const Key('recordatorio_titulo')),
-        'Tomar losartán 50 mg');
+    await t.enterText(
+        find.byKey(const Key('recordatorio_titulo')), 'Tomar losartán 50 mg');
     await tocar(t, find.byKey(const Key('guardar_recordatorio')));
     await esperar(t, find.text('Tomar losartán 50 mg'));
     await captura(t, 'recordatorio_editado');
@@ -178,8 +184,8 @@ void main() {
     // ---------- Recordatorios: baja lógica ----------
     final tarjeta2 = find.ancestor(
         of: find.text('Tomar losartán 50 mg'), matching: find.byType(Card));
-    await tocar(t,
-        find.descendant(of: tarjeta2, matching: find.byTooltip('Eliminar')));
+    await tocar(
+        t, find.descendant(of: tarjeta2, matching: find.byTooltip('Eliminar')));
     await captura(t, 'recordatorio_confirmar_eliminar');
     await tocar(t, find.text('Sí, eliminar'));
     await esperar(t, find.text('Recordatorio eliminado.'));
