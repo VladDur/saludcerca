@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-/// Preferencias de accesibilidad y apariencia (HU-06 y modo oscuro).
+/// Preferencias de accesibilidad y apariencia (HU-05 y modo oscuro HU-06).
 /// Se guardan en el teléfono con SharedPreferences, así se mantienen
 /// al cerrar y volver a abrir la app.
 class AjustesController extends ChangeNotifier {

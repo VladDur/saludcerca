@@ -12,7 +12,7 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 /// Ejecutar (ver README):
 ///   flutter drive --driver=test_driver/integration_test.dart \
 ///     --target=integration_test/app_test.dart --dart-define-from-file=env.json -d <dispositivo>
-/// Recorre login, consultas, CRUD, RLS, HU-06 y modo oscuro, y guarda
+/// Recorre login, consultas, CRUD, RLS, HU-05 y modo oscuro HU-06, y guarda
 /// capturas en sprint2-evidencias/.
 
 const _correo = String.fromEnvironment('TEST_EMAIL');
@@ -240,7 +240,7 @@ void main() {
     await captura(t, 'perfil_guardado');
     await ocultarAvisos(t);
 
-    // ---------- HU-06 y modo oscuro ----------
+    // ---------- HU-05 y modo oscuro HU-06 ----------
     await t.scrollUntilVisible(
         find.byKey(const Key('switch_texto_grande')), -300,
         scrollable: find.byType(Scrollable).first);

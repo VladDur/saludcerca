@@ -224,7 +224,7 @@ void main() {
     });
   });
 
-  group('HU-06 accesibilidad y modo oscuro', () {
+  group('HU-05 accesibilidad y HU-06 modo oscuro', () {
     testWidgets('texto grande se aplica en toda la app', (tester) async {
       await abrirApp(tester, conSesion: true);
       double escala() =>

@@ -91,7 +91,7 @@ void main() {
     expect(m['fecha_hora'], '2026-12-01T14:00:00.000Z');
   });
 
-  group('Ajustes persistentes (HU-06 y modo oscuro)', () {
+  group('Ajustes persistentes (HU-05 y modo oscuro HU-06)', () {
     test('valores por defecto', () async {
       SharedPreferences.setMockInitialValues({});
       final a = await AjustesController.cargar();

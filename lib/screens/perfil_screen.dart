@@ -7,7 +7,7 @@ import '../data/repositorios.dart';
 import '../models/perfil.dart';
 import '../widgets/mensajes.dart';
 
-/// Pestaña Perfil: datos del usuario (READ/UPDATE), accesibilidad (HU-06),
+/// Pestaña Perfil: datos del usuario (READ/UPDATE), accesibilidad (HU-05),
 /// modo oscuro y cierre de sesión.
 class PerfilScreen extends StatefulWidget {
   final UsuarioActual usuario;
@@ -237,7 +237,7 @@ class _PerfilScreenState extends State<PerfilScreen> {
   }
 }
 
-/// HU-06 (texto grande, alto contraste) y modo oscuro. Los cambios se
+/// HU-05 (texto grande, alto contraste) y modo oscuro. Los cambios se
 /// aplican al instante en todas las pantallas y se guardan en el teléfono.
 class _SeccionAccesibilidad extends StatelessWidget {
   const _SeccionAccesibilidad();

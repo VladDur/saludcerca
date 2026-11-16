@@ -12,8 +12,8 @@ El backend es **Supabase** (PostgreSQL + Auth + Row Level Security).
 | Base de datos | 6 tablas + 1 vista, relaciones 1‑1, 1‑N y N‑M, políticas RLS (cada usuario solo ve sus datos), triggers y datos de prueba. Scripts en `supabase/`. |
 | Consultas dinámicas | Lista de centros desde Supabase con búsqueda por nombre o zona y filtros por ciudad, tipo, emergencias y "abiertos ahora". Distancia calculada con Haversine. |
 | CRUD | **Recordatorios** (crear, ver, editar, eliminar con baja lógica), **Favoritos** (guardar con nota, editar nota, quitar con baja lógica) y **Perfil** (ver y editar datos). Formularios validados y mensajes de confirmación/error. |
-| HU‑06 Accesibilidad | En la pestaña **Perfil**: *Texto grande* (×1,3 sobre el tamaño del sistema) y *Alto contraste*. Se aplican en todas las pantallas y se mantienen al cerrar y abrir la app. Todos los botones miden al menos 48 dp (Android) / 44 pt (iOS). |
-| HU nueva: Modo oscuro | En **Perfil → Tema**: Claro, Oscuro o Sistema. Persistente. Se combina con alto contraste. |
+| HU‑05 Accesibilidad | En la pestaña **Perfil**: *Texto grande* (×1,3 sobre el tamaño del sistema) y *Alto contraste*. Se aplican en todas las pantallas y se mantienen al cerrar y abrir la app. Todos los botones miden al menos 48 dp (Android) / 44 pt (iOS). |
+| HU‑06 Modo oscuro (nueva) | En **Perfil → Tema**: Claro, Oscuro o Sistema. Persistente. Se combina con alto contraste. |
 
 ## Requisitos
 
@@ -71,7 +71,7 @@ flutter analyze   # análisis estático
 flutter test      # 29 pruebas unitarias y de widgets (sin internet, repositorios falsos)
 ```
 
-Prueba **end-to-end contra Supabase real** (login, consultas, CRUD, RLS, HU‑06, modo oscuro),
+Prueba **end-to-end contra Supabase real** (login, consultas, CRUD, RLS, HU‑05 accesibilidad, HU‑06 modo oscuro),
 que además guarda las capturas en `sprint2-evidencias/`. Requiere `TEST_EMAIL` y
 `TEST_PASSWORD` en `env.json` y un emulador o simulador abierto:
 
@@ -103,7 +103,7 @@ lib/
   data/repositorios.dart     interfaces de acceso a datos
   data/supabase/             implementación con Supabase
   models/                    centro_salud, perfil, favorito, recordatorio
-  settings/                  AjustesController (HU‑06 y modo oscuro, persistente)
+  settings/                  AjustesController (HU‑05 y HU‑06, persistente)
   screens/                   auth (login, registro), shell, centros, detalle,
                              favoritos, recordatorios, formulario, perfil
   theme/app_theme.dart       4 temas: claro, oscuro, alto contraste claro/oscuro

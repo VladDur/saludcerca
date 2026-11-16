@@ -6,7 +6,7 @@ Generadas el 16/11/2026 contra el proyecto real de Supabase.
 |---|---|---|
 | `flutter_version.txt`, `dispositivos.txt` | Entorno: Flutter, emulador Android (Pixel 9, Android 17) y simulador iOS (iPhone 17, iOS 26.5) | 3.1 |
 | `flutter_analyze.txt` | Análisis estático sin problemas | 9 |
-| `flutter_test.txt` | 29 pruebas unitarias y de widgets en verde (validaciones, CRUD, auth, HU‑06, botones ≥ 48 dp / 44 pt, contraste) | 9.2, 9.4, 9.5 |
+| `flutter_test.txt` | 29 pruebas unitarias y de widgets en verde (validaciones, CRUD, auth, HU‑05, HU‑06, botones ≥ 48 dp / 44 pt, contraste) | 9.2, 9.4, 9.5 |
 | `prueba_e2e_ios.txt`, `prueba_e2e_android.txt` | Prueba end-to-end contra Supabase aprobada en ambas plataformas | 9.3 a 9.7 |
 | `prueba_rls_sin_sesion.txt` | Sin sesión (rol anon) la API rechaza todas las tablas | 7.8, 9.6 |
 
@@ -26,8 +26,9 @@ favoritos, que no puede crear recordatorios a nombre de otro usuario, que el bor
 | 14 | Recordatorio editado | 6.3 |
 | 15–16 | Confirmar eliminación y baja lógica | 6.4 |
 | 17–19 | Perfil: datos, validación de teléfono, guardado | 6.2, 6.3, 7.6 |
-| 20–21 | HU‑06 Texto grande (Perfil y Centros) | HU‑06 |
-| 22–23 | HU‑06 Alto contraste (Perfil y Centros) | HU‑06 |
-| 24 | Modo oscuro + alto contraste | HU nueva |
-| 25–27 | Modo oscuro (Perfil, Centros, Favoritos) | HU nueva |
+| 20–21 | HU‑05 Texto grande (Perfil y Centros) | HU‑05 |
+| 22–23 | HU‑05 Alto contraste (Perfil y Centros) | HU‑05 |
+| 24 | Modo oscuro + alto contraste | HU‑06 |
+| 25–27 | Modo oscuro (Perfil, Centros, Favoritos) | HU‑06 |
 | 28 | Confirmación de cierre de sesión | 7.4 |
+Los archivos 20_hu06_* y 22–23_hu06_* conservan su nombre original; corresponden a HU‑05 tras la renumeración del backlog.
