@@ -67,8 +67,18 @@ Para iOS: `flutter build ios --dart-define-from-file=env.json` (requiere Xcode y
 ### 4. Pruebas y análisis
 
 ```bash
-flutter analyze
-flutter test
+flutter analyze   # análisis estático
+flutter test      # 26 pruebas unitarias y de widgets (sin internet, repositorios falsos)
+```
+
+Prueba **end-to-end contra Supabase real** (login, consultas, CRUD, RLS, HU‑06, modo oscuro),
+que además guarda las capturas en `sprint2-evidencias/`. Requiere `TEST_EMAIL` y
+`TEST_PASSWORD` en `env.json` y un emulador o simulador abierto:
+
+```bash
+flutter drive --driver=test_driver/integration_test.dart \
+  --target=integration_test/app_test.dart \
+  --dart-define-from-file=env.json -d <id-del-dispositivo>
 ```
 
 ## URLs y credenciales de prueba
@@ -77,7 +87,7 @@ flutter test
 |---|---|
 | Panel de Supabase | <https://supabase.com/dashboard> → proyecto **SaludCerca** |
 | URL de la API | `SUPABASE_URL` en `env.json` (se entrega aparte, no se sube a git) |
-| Usuario de prueba | `prueba@saludcerca.app` |
+| Usuario de prueba | `vladi@saludcerca.app` |
 | Contraseña de prueba | `Prueba123` |
 
 También puedes crear tu propia cuenta desde la pantalla **Crear una cuenta**.
@@ -102,6 +112,8 @@ supabase/
   schema.sql                 tablas, vista, triggers, RLS y permisos
   seed.sql                   datos de prueba
 test/                        pruebas unitarias y de widgets (repositorios falsos)
+integration_test/            prueba end-to-end contra Supabase (Android e iOS)
+test_driver/                 guarda las capturas de la prueba end-to-end
 sprint2-evidencias/          capturas Android/iOS y salidas de test/analyze
 ```
 

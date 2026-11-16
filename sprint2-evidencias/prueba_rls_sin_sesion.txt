@@ -1,0 +1,15 @@
+Prueba de seguridad RLS: acceso SIN iniciar sesión (rol anon) — 2026-11-16 14:43
+URL de la API: https://<proyecto>.supabase.co/rest/v1/
+GET /v_centros -> "permission denied for view v_centros" [HTTP 401]
+
+GET /centros_salud -> "permission denied for table centros_salud" [HTTP 401]
+
+GET /servicios -> "permission denied for table servicios" [HTTP 401]
+
+GET /favoritos -> "permission denied for table favoritos" [HTTP 401]
+
+GET /recordatorios -> "permission denied for table recordatorios" [HTTP 401]
+
+GET /perfiles -> "permission denied for table perfiles" [HTTP 401]
+
+Resultado esperado: todas las tablas rechazan al usuario no autenticado (42501 / 401).

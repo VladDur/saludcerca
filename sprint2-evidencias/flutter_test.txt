@@ -1,0 +1,28 @@
+00:00 +0: loading test/unidad_test.dart
+00:00 +0: test/unidad_test.dart: Validadores de formularios correo
+00:00 +1: test/unidad_test.dart: Validadores de formularios contraseña nueva exige 6 caracteres con letras y números
+00:00 +2: test/unidad_test.dart: Validadores de formularios confirmar contraseña
+00:00 +3: test/unidad_test.dart: Validadores de formularios teléfono opcional
+00:00 +4: test/unidad_test.dart: Validadores de formularios título de recordatorio
+00:00 +5: test/unidad_test.dart: Modelo CentroSalud (datos desde Supabase) se convierte desde la fila de la vista v_centros
+00:00 +6: test/unidad_test.dart: Modelo CentroSalud (datos desde Supabase) abierto según día y hora
+00:00 +7: test/widget_test.dart: Autenticación y pantallas protegidas sin sesión solo se ve el inicio de sesión
+00:00 +8: test/widget_test.dart: Autenticación y pantallas protegidas sin sesión solo se ve el inicio de sesión
+00:00 +9: test/widget_test.dart: Autenticación y pantallas protegidas sin sesión solo se ve el inicio de sesión
+00:00 +10: test/widget_test.dart: Autenticación y pantallas protegidas sin sesión solo se ve el inicio de sesión
+00:00 +11: test/widget_test.dart: Autenticación y pantallas protegidas sin sesión solo se ve el inicio de sesión
+00:00 +12: test/widget_test.dart: Autenticación y pantallas protegidas valida el formulario de login
+00:00 +13: test/widget_test.dart: Autenticación y pantallas protegidas credenciales incorrectas muestran un mensaje de error
+00:01 +14: test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +15: test/widget_test.dart: Autenticación y pantallas protegidas registro valida y crea la cuenta
+00:02 +16: test/widget_test.dart: Consultas dinámicas de centros filtra por ciudad y por emergencias
+00:02 +17: test/widget_test.dart: CRUD favoritos: crear, editar nota y baja lógica
+00:02 +18: test/widget_test.dart: CRUD recordatorios: validación, crear, editar y baja lógica
+00:03 +19: test/widget_test.dart: CRUD perfil: valida y actualiza datos
+00:03 +20: test/widget_test.dart: HU-06 accesibilidad y modo oscuro texto grande se aplica en toda la app
+00:04 +21: test/widget_test.dart: HU-06 accesibilidad y modo oscuro alto contraste y modo oscuro cambian el tema
+00:04 +22: test/widget_test.dart: HU-06 accesibilidad y modo oscuro las preferencias guardadas se aplican al reabrir
+00:04 +23: test/widget_test.dart: HU-06 accesibilidad y modo oscuro botones ≥ 48 dp (Android) y ≥ 44 pt (iOS) · normal
+00:04 +24: test/widget_test.dart: HU-06 accesibilidad y modo oscuro botones ≥ 48 dp (Android) y ≥ 44 pt (iOS) · texto grande + alto contraste + oscuro
+00:04 +25: test/widget_test.dart: HU-06 accesibilidad y modo oscuro contraste de texto suficiente en alto contraste
+00:04 +26: All tests passed!
