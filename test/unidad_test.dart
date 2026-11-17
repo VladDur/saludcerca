@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:saludcerca/core/errores.dart';
 import 'package:saludcerca/core/validadores.dart';
+import 'package:saludcerca/data/supabase/supabase_repositorios.dart';
 import 'package:saludcerca/models/centro_salud.dart';
 import 'package:saludcerca/models/recordatorio.dart';
 import 'package:saludcerca/settings/ajustes_controller.dart';
@@ -132,6 +133,18 @@ void main() {
           statusCode: '422',
           reasons: const ['length']);
       expect(mensajeError(e), 'La contraseña no cumple los requisitos.');
+    });
+  });
+
+  group('Registro con correo ya existente (HU-07)', () {
+    test('Supabase responde sin identidades: se detecta el duplicado', () {
+      expect(correoYaRegistrado(const []), isTrue);
+      expect(correoYaRegistrado(const ['email']), isFalse);
+      expect(correoYaRegistrado(null), isFalse);
+    });
+    test('el mensaje dice que el correo ya está registrado', () {
+      expect(mensajeError(const AuthException('User already registered')),
+          startsWith('Este correo ya está registrado'));
     });
   });
 }

@@ -18,7 +18,7 @@ String mensajeError(Object error) {
       return 'Debes confirmar tu correo antes de ingresar. Revisa tu bandeja de entrada.';
     }
     if (m.contains('already registered') || m.contains('already exists')) {
-      return 'Ya existe una cuenta con ese correo.';
+      return 'Este correo ya está registrado. Inicia sesión o usa otro correo.';
     }
     if (m.contains('rate limit')) {
       return 'Demasiados intentos. Espera unos minutos y vuelve a intentar.';

@@ -112,6 +112,25 @@ void main() {
     });
   });
 
+  testWidgets('registro con un correo ya registrado muestra el aviso',
+      (tester) async {
+    await abrirApp(tester);
+    await tester.tap(find.text('Crear una cuenta'));
+    await tester.pumpAndSettle();
+    await tester.enterText(
+        find.byKey(const Key('registro_nombre')), 'Ana Pérez');
+    await tester.enterText(
+        find.byKey(const Key('registro_correo')), correoPrueba);
+    await tester.enterText(find.byKey(const Key('registro_clave')), 'Clave123');
+    await tester.enterText(
+        find.byKey(const Key('registro_confirmar')), 'Clave123');
+    await tester.tap(find.widgetWithText(FilledButton, 'Crear cuenta'));
+    await tester.pumpAndSettle();
+    expect(
+        find.textContaining('Este correo ya está registrado'), findsOneWidget);
+    expect(find.byType(ShellScreen), findsNothing);
+  });
+
   group('Consultas dinámicas de centros', () {
     testWidgets('filtra por ciudad y por emergencias', (tester) async {
       await abrirApp(tester, conSesion: true);

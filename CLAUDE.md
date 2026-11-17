@@ -129,7 +129,7 @@ la implementación por fakes. No hay paquete de estado externo: se usan `ChangeN
 flutter pub get
 flutter run --dart-define-from-file=env.json          # sin esto aparece "Falta configurar Supabase"
 flutter analyze
-flutter test                                          # 29 pruebas, sin internet
+flutter test                                          # 32 pruebas, sin internet
 flutter drive --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart --dart-define-from-file=env.json -d <id>
 flutter build apk --release --dart-define-from-file=env.json
@@ -185,6 +185,10 @@ flutter build apk --release --dart-define-from-file=env.json
 - **Mensaje engañoso "La contraseña no cumple los requisitos".** El texto del error de red
   contiene la URL `...grant_type=password`. Ahora los errores de red se detectan primero y
   muestran "Sin conexión a internet…". Hay pruebas en `test/unidad_test.dart`.
+- **Registro con un correo ya existente parecía exitoso.** Con "Confirm email" activo, Supabase
+  no revela si el correo existe: devuelve un usuario con `identities` vacío. Ahora
+  `SupabaseAuthRepositorio.registrar` lo detecta (`correoYaRegistrado`) y muestra "Este correo
+  ya está registrado…". Hay pruebas en `test/unidad_test.dart` y `test/widget_test.dart`.
 - **Simulador iOS:** no se puede escribir a mano en los campos de Flutter con las
   herramientas de automatización; usa `integration_test`. En el emulador Android, `adb input`
   pierde caracteres cuando la Mac está cargada.

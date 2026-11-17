@@ -17,6 +17,11 @@ String _uid() {
   return id;
 }
 
+/// Supabase devuelve un usuario con la lista de identidades vacía cuando el
+/// correo ya estaba registrado (protección contra enumeración de cuentas).
+bool correoYaRegistrado(List<Object?>? identidades) =>
+    identidades != null && identidades.isEmpty;
+
 class SupabaseAuthRepositorio implements AuthRepositorio {
   UsuarioActual? _mapear(User? u) =>
       u == null ? null : UsuarioActual(id: u.id, correo: u.email ?? '');
@@ -43,6 +48,11 @@ class SupabaseAuthRepositorio implements AuthRepositorio {
       password: clave,
       data: {'nombre_completo': nombre.trim()},
     );
+    // Con "Confirm email" activo, Supabase no revela si el correo ya existe:
+    // responde como si el registro fuera exitoso, pero sin identidades.
+    if (correoYaRegistrado(r.user?.identities)) {
+      throw const AuthException('User already registered');
+    }
     return r.session != null
         ? ResultadoRegistro.sesionIniciada
         : ResultadoRegistro.confirmarCorreo;
