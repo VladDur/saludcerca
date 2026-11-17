@@ -53,7 +53,7 @@ En el Sprint 2 hubo cambios en el backlog:
 | HU‑08 | Perfil básico (datos, ciudad, contacto de emergencia) | Must | 5 | 2 | Hecho |
 | HU‑09 | Buscar y filtrar centros (tipo, ciudad, emergencias) | Must | 5 | 2 | Hecho |
 | HU‑10 | CRUD de recordatorios (citas, medicamentos, controles) | Must | 8 | 2 | Hecho |
-| HU‑11 | Instalar en un Android y un iPhone reales | Must | 5 | 2 | En progreso |
+| HU‑11 | Instalar en un Android y un iPhone reales | Must | 5 | 2 | Hecho (16/11/2026) |
 | HU‑12 | Mapa interactivo de farmacias y centros | Must | 5 | 3 | Por hacer |
 | HU‑13 | Detectar la ubicación del usuario | Must | 5 | 3 | Por hacer |
 | HU‑14 | Alarma a la hora del medicamento | Must | 5 | 3 | Por hacer |
@@ -72,7 +72,7 @@ en `sprint2-documento/SaludCerca_Tablero_Sprint2.xlsx`.
 - **Sprint 1 (terminado):** prototipo de 3 pantallas con datos en memoria (commit
   `d98fbd8`). Las evidencias están en `sprint1-evidencias/`. El prototipo **no** se modifica.
 - **Sprint 2 (implementado, en la rama `sprint2`):** Supabase, autenticación, consultas
-  dinámicas, CRUD con baja lógica, HU‑05 y HU‑06. Pruebas unitarias y end-to-end en verde en
+  dinámicas, CRUD con baja lógica, HU‑05 y HU‑06. 8 de 8 HU y 37 de 37 puntos (100 %). Pruebas unitarias y end-to-end en verde en
   Android e iOS. El documento técnico está en `sprint2-documento/`.
 - **Sprint 3 (siguiente):** HU‑03 farmacias de turno (requiere tablas `farmacias` y turnos),
   HU‑12 mapa, HU‑13 ubicación, HU‑14 alarmas y HU‑15 consejos.
@@ -197,7 +197,6 @@ flutter build apk --release --dart-define-from-file=env.json
 
 - **Push de la rama `sprint2`** a `origin` (GitHub `VladDur/saludcerca`). Está pendiente de la
   aprobación explícita del usuario.
-- **Probar el APK corregido en el celular físico** y, si funciona, marcar HU‑11 (falta además el iPhone real).
 - **Completar los datos `[COMPLETAR]` / `[CONFIRMAR]` del documento del Sprint 2**: unos 14
   datos del equipo, como las estimaciones de Planning Poker, el seguimiento y el feedback.
 - **Sprint 3:** HU‑03 farmacias de turno (nuevas tablas y RLS), HU‑12 a HU‑15.
