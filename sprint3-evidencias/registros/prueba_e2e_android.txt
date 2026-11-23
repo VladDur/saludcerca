@@ -1,0 +1,249 @@
+Resolving dependencies...
+Downloading packages...
+  code_assets 1.2.1 (2.2.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  dbus 0.7.15 (0.8.1 available)
+  flutter_lints 4.0.0 (6.0.0 available)
+  gsettings 0.2.8 (0.2.9 available)
+  hooks 2.0.2 (2.2.0 available)
+  jni 1.1.2 (1.2.1 available)
+  jni_flutter 1.0.4+1 (1.1.0 available)
+  lints 4.0.0 (6.1.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  objective_c 9.5.0 (9.6.4 available)
+  petitparser 7.0.2 (7.1.0 available)
+  record_use 0.6.0 (1.1.1 available)
+  shared_preferences_foundation 2.5.7 (2.6.2 available)
+  test_api 0.7.12 (0.7.15 available)
+  url_launcher_android 6.3.33 (6.3.35 available)
+  vector_math 2.4.0 (2.4.4 available)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+19 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Installing build/app/outputs/flutter-apk/app-debug.apk...          969ms
+D/FlutterGeolocator(24745): Geolocator foreground service connected
+D/FlutterGeolocator(24745): Initializing Geolocator services
+D/FlutterGeolocator(24745): Flutter engine connected. Connected engine count 1
+I/Choreographer(24745): Skipped 40 frames!  The application may be doing too much work on its main thread.
+D/WindowLayoutComponentImpl(24745): Register WindowLayoutInfoListener on Context=com.example.saludcerca.MainActivity@129dbce, of which baseContext=android.app.ContextImpl@103e70b
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:55619/8dmt44Z8VXg=/
+VMServiceFlutterDriver: Isolate found with number: 6749280972834447
+VMServiceFlutterDriver: Isolate 6749280972834447 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter (24745): 00:00 +0: Sprint 3 end-to-end: APIs reales
+VMServiceFlutterDriver: Connected to Flutter application.
+I/flutter (24745): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+D/DesktopExperienceFlags(24745): Toggle override initialized to: false
+D/InsetsController(24745): hide(ime())
+I/ImeTracker(24745): com.example.saludcerca:2201f2cf: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/ProfileInstaller(24745): Installing profile for com.example.saludcerca
+I/ImeTracker(24745): com.example.saludcerca:c3c1503: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+I/HWUI    (24745): Using FreeType backend (prop=Auto)
+D/InsetsController(24745): show(ime())
+D/InsetsController(24745): Setting requestedVisibleTypes to 511 (was 503)
+I/ImeTracker(24745): com.example.saludcerca:49351630: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+I/ImeTracker(24745): com.example.saludcerca:49351630: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+D/InputConnectionAdaptor(24745): The input method toggled cursor monitoring on
+I/AssistStructure(24745): Flattened final assist data: 636 bytes, containing 1 windows, 4 views
+I/ImeTracker(24745): com.example.saludcerca:d9a38173: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+I/ImeTracker(24745): com.example.saludcerca:d9a38173: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+I/ImeTracker(24745): com.example.saludcerca:c0911e35: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+I/ImeTracker(24745): com.example.saludcerca:c0911e35: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+W/RemoteInputConnectionImpl(24745): getSurroundingText on inactive InputConnection
+I/AssistStructure(24745): Flattened final assist data: 656 bytes, containing 1 windows, 4 views
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.view.ImeBackAnimationController@87e69de
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+W/InteractionJankMonitor(24745): Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.example.saludcerca
+D/InputConnectionAdaptor(24745): The input method toggled cursor monitoring on
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): com.example.saludcerca:c3c1503: onShown
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): com.example.saludcerca:7dec326f: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): hide(ime())
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@392e3ed
+D/InsetsController(24745): Setting requestedVisibleTypes to 503 (was 511)
+D/CompatChangeReporter(24745): Compat change id reported: 395521150; UID 10239; state: ENABLED
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): system_server:1ea5d7c1: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): system_server:2bf0a9f5: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+I/flutter (24745): [AUTH] sesión iniciada, JWT con expiración 1795452179
+I/flutter (24745): [API] GET nominatim.openstreetmap.org/reverse -> 200 (407 ms)
+I/flutter (24745): [API] GET api.open-meteo.com/v1/forecast -> 200 (840 ms)
+I/Surface (24745): Creating surface for consumer unnamed-24745-2 with slotExpansion=1 for 64 slots
+I/Surface (24745): Creating surface for consumer ImageReader-1080x2424f1m3-24745-0 with slotExpansion=1 for 64 slots
+I/flutter (24745): [EVIDENCIA] 01_centros_ubicacion_clima_android
+I/flutter (24745): [EVIDENCIA] 02_centros_por_cercania_android
+I/flutter (24745): [EVIDENCIA] 03_farmacias_turno_hoy_android
+I/flutter (24745): [EVIDENCIA] 04_farmacias_el_alto_android
+I/flutter (24745): [EVIDENCIA] 05_farmacias_manana_android
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@3b1209
+I/flutter (24745): [EVIDENCIA] 06_farmacia_detalle_android
+I/flutter (24745):   [1m[flutter_map][0m
+I/flutter (24745):     We want to help keep OpenStreetMap available for everyone. Our examples
+I/flutter (24745):     and demo app use the public tile servers, but they are NOT free to use by
+I/flutter (24745):     everyone! Please review whether the OpenStreetMap tile servers are suitable
+I/flutter (24745):     for your project.
+I/flutter (24745):     See:
+I/flutter (24745):       * https://operations.osmfoundation.org/policies/tiles (OSM Tile Usage Policy)
+I/flutter (24745):       * https://docs.fleaflet.dev/osm-warn for more information about this warning
+I/flutter (24745): [EVIDENCIA] 07_mapa_farmacia_enfocada_android
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@392e3ed
+I/flutter (24745): [RLS] insert en farmacias rechazado: 42501 permission denied for table farmacias
+I/flutter (24745):   [1m[flutter_map][0m
+I/flutter (24745):     We want to help keep OpenStreetMap available for everyone. Our examples
+I/flutter (24745):     and demo app use the public tile servers, but they are NOT free to use by
+I/flutter (24745):     everyone! Please review whether the OpenStreetMap tile servers are suitable
+I/flutter (24745):     for your project.
+I/flutter (24745):     See:
+I/flutter (24745):       * https://operations.osmfoundation.org/policies/tiles (OSM Tile Usage Policy)
+I/flutter (24745):       * https://docs.fleaflet.dev/osm-warn for more information about this warning
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@3b1209
+I/flutter (24745): [EVIDENCIA] 08_mapa_centros_farmacias_android
+I/ImeTracker(24745): com.example.saludcerca:d11a2c16: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+D/InsetsController(24745): Setting requestedVisibleTypes to 511 (was 503)
+I/ImeTracker(24745): com.example.saludcerca:230f4c84: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+I/ImeTracker(24745): com.example.saludcerca:230f4c84: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.view.ImeBackAnimationController@87e69de
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): com.example.saludcerca:d11a2c16: onShown
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): com.example.saludcerca:2728e3b9: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): hide(ime())
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@3b1209
+D/InsetsController(24745): Setting requestedVisibleTypes to 503 (was 511)
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/flutter (24745): [API] GET nominatim.openstreetmap.org/search -> 200 (478 ms)
+I/flutter (24745): [EVIDENCIA] 09_mapa_busqueda_resultados_android
+I/flutter (24745): [EVIDENCIA] 10_mapa_lugar_encontrado_android
+I/flutter (24745): [EVIDENCIA] 11_mapa_solo_centros_android
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@392e3ed
+I/ImeTracker(24745): com.example.saludcerca:1ccf4793: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+D/InsetsController(24745): Setting requestedVisibleTypes to 511 (was 503)
+I/ImeTracker(24745): com.example.saludcerca:da94e4a0: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+I/ImeTracker(24745): com.example.saludcerca:da94e4a0: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.view.ImeBackAnimationController@87e69de
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): com.example.saludcerca:1ccf4793: onShown
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@3b1209
+I/ImeTracker(24745): com.example.saludcerca:1e00c447: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): hide(ime())
+D/InsetsController(24745): Setting requestedVisibleTypes to 503 (was 511)
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/flutter (24745):   [1m[flutter_map][0m
+I/flutter (24745):     We want to help keep OpenStreetMap available for everyone. Our examples
+I/flutter (24745):     and demo app use the public tile servers, but they are NOT free to use by
+I/flutter (24745):     everyone! Please review whether the OpenStreetMap tile servers are suitable
+I/flutter (24745):     for your project.
+I/flutter (24745):     See:
+I/flutter (24745):       * https://operations.osmfoundation.org/policies/tiles (OSM Tile Usage Policy)
+I/flutter (24745):       * https://docs.fleaflet.dev/osm-warn for more information about this warning
+I/flutter (24745): [EVIDENCIA] 12_mapa_marcador_centro_android
+I/ImeTracker(24745): com.example.saludcerca:bbe3bef7: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+D/InsetsController(24745): Setting requestedVisibleTypes to 511 (was 503)
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@392e3ed
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.view.ImeBackAnimationController@87e69de
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): com.example.saludcerca:bbe3bef7: onShown
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): com.example.saludcerca:862fb473: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): hide(ime())
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@392e3ed
+D/InsetsController(24745): Setting requestedVisibleTypes to 503 (was 511)
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/flutter (24745): [API] GET nominatim.openstreetmap.org/reverse -> TIMEOUT (2 ms)
+I/flutter (24745): [API] GET api.open-meteo.com/v1/no-existe -> 404 (1019 ms)
+I/flutter (24745): [EVIDENCIA] 13_error_clima_404_android
+I/flutter (24745):   [1m[flutter_map][0m
+I/flutter (24745):     We want to help keep OpenStreetMap available for everyone. Our examples
+I/flutter (24745):     and demo app use the public tile servers, but they are NOT free to use by
+I/flutter (24745):     everyone! Please review whether the OpenStreetMap tile servers are suitable
+I/flutter (24745):     for your project.
+I/flutter (24745):     See:
+I/flutter (24745):       * https://operations.osmfoundation.org/policies/tiles (OSM Tile Usage Policy)
+I/flutter (24745):       * https://docs.fleaflet.dev/osm-warn for more information about this warning
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@3b1209
+I/ImeTracker(24745): com.example.saludcerca:b50957c4: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+D/InsetsController(24745): Setting requestedVisibleTypes to 511 (was 503)
+I/ImeTracker(24745): com.example.saludcerca:64448ea3: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): show(ime())
+I/ImeTracker(24745): com.example.saludcerca:64448ea3: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.view.ImeBackAnimationController@87e69de
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/ImeTracker(24745): com.example.saludcerca:b50957c4: onShown
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/flutter (24745): [API] GET nominatim.openstreetmap.org/search -> TIMEOUT (11 ms)
+I/ImeTracker(24745): com.example.saludcerca:3d477ffb: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(24745): hide(ime())
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@3b1209
+D/InsetsController(24745): Setting requestedVisibleTypes to 503 (was 511)
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+D/FlutterJNI(24745): Sending viewport metrics to the engine.
+I/flutter (24745): [EVIDENCIA] 14_error_nominatim_timeout_android
+D/WindowOnBackDispatcher(24745): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@392e3ed
+I/flutter (24745): supabase.auth: INFO: Signing out user with scope: local 
+E/ConsumerBase(24745): [ImageReader-1080x2424f1m3-24745-0] abandonLocked: ConsumerBase is abandoned!
+I/flutter (24745): 02:10 +1: (tearDownAll)
+I/Choreographer(24745): Skipped 69 frames!  The application may be doing too much work on its main thread.
+I/flutter (24745): 02:11 +2: All tests passed!
+I/HWUI    (24745): Davey! duration=1167ms; Flags=0, FrameTimelineVsyncId=471637, IntendedVsync=23403017628159, Vsync=23404167628113, InputEventId=0, HandleInputStart=23404169992545, AnimationStart=23404169994254, PerformTraversalsStart=23404169994712, DrawStart=23404170211295, FrameDeadline=23403034294825, FrameStartTime=23404169507254, FrameInterval=16666666, WorkloadTarget=16666666, AnimationTime=23404167628113, SyncQueued=23404170290837, SyncStart=23404170403337, IssueDrawCommandsStart=23404170442920, SwapBuffers=23404171538795, FrameCompleted=23404184935795, DequeueBufferDuration=2459, QueueBufferDuration=353166, GpuCompleted=23404184935795, SwapBuffersCompleted=23404172479462, DisplayPresentTime=11881, CommandSubmissionCompleted=23404171538795, 
+All tests passed.

@@ -45,7 +45,7 @@ En el Sprint 2 hubo cambios en el backlog:
 |---|---|---|---|---|---|
 | HU‑01 | Pantalla de bienvenida e inicio de sesión | Must | 3 | 1 | Hecho |
 | HU‑02 | Navegación por pestañas (Centros, Favoritos, Recordatorios, Perfil) | Must | 3 | 2 | Hecho |
-| HU‑03 | Farmacias de turno | Must | 5 | 3 | En progreso (reprogramada) |
+| HU‑03 | Farmacias de turno | Must | 5 | 3 | Hecho |
 | HU‑04 | Detalle de un centro de salud | Must | 3 | 1 | Hecho |
 | HU‑05 | **Accesibilidad**: texto grande y alto contraste, botones amplios | Should | 3 | 2 | Hecho |
 | HU‑06 | **Modo oscuro**: claro / oscuro / sistema (nueva) | Should | 3 | 2 | Hecho |
@@ -54,10 +54,10 @@ En el Sprint 2 hubo cambios en el backlog:
 | HU‑09 | Buscar y filtrar centros (tipo, ciudad, emergencias) | Must | 5 | 2 | Hecho |
 | HU‑10 | CRUD de recordatorios (citas, medicamentos, controles) | Must | 8 | 2 | Hecho |
 | HU‑11 | Instalar en un Android y un iPhone reales | Must | 5 | 2 | Hecho (16/11/2026) |
-| HU‑12 | Mapa interactivo de farmacias y centros | Must | 5 | 3 | Por hacer |
-| HU‑13 | Detectar la ubicación del usuario | Must | 5 | 3 | Por hacer |
-| HU‑14 | Alarma a la hora del medicamento | Must | 5 | 3 | Por hacer |
-| HU‑15 | Consejos de salud preventiva | Should | 8 | 3 | Por hacer |
+| HU‑12 | Mapa interactivo de farmacias y centros | Must | 5 | 3 | Hecho |
+| HU‑13 | Detectar la ubicación del usuario | Must | 5 | 3 | Hecho |
+| HU‑14 | Alarma a la hora del medicamento | Must | 5 | 4 | Por hacer (movida al Sprint 4) |
+| HU‑15 | Consejos de salud preventiva | Should | 8 | 4 | Por hacer (movida al Sprint 4) |
 | HU‑16 | Farmacias de turno sin conexión | Should | 8 | 4 | Por hacer |
 | HU‑17 | Pruebas unitarias y beta con adultos mayores | Must | 5 | 4 | Por hacer |
 | HU‑18 | Protección de datos médicos | Must | 5 | 4 | En progreso (RLS ya aplicada) |
@@ -74,8 +74,11 @@ en `sprint2-documento/SaludCerca_Tablero_Sprint2.xlsx`.
 - **Sprint 2 (implementado, en la rama `sprint2`):** Supabase, autenticación, consultas
   dinámicas, CRUD con baja lógica, HU‑05 y HU‑06. 8 de 8 HU y 37 de 37 puntos (100 %). Pruebas unitarias y end-to-end en verde en
   Android e iOS. El documento técnico está en `sprint2-documento/`.
-- **Sprint 3 (siguiente):** HU‑03 farmacias de turno (requiere tablas `farmacias` y turnos),
-  HU‑12 mapa, HU‑13 ubicación, HU‑14 alarmas y HU‑15 consejos.
+- **Sprint 3 (implementado, rama `sprint3`, entrega 23/11/2026):** consumo de APIs. HU‑03
+  farmacias de turno (tablas `farmacias` y `turnos_farmacia`), HU‑13 ubicación (geolocator),
+  HU‑12 mapa (flutter_map + teselas OSM, búsqueda con Nominatim) y clima con Open-Meteo.
+  76 pruebas y E2E en verde en Android e iOS. Detalle técnico en `SPRINT3_NOTAS.md`,
+  evidencias en `sprint3-evidencias/`, ZIP en `Entrega_Sprint3/`.
 
 ## 6. Arquitectura y carpetas
 
@@ -129,7 +132,7 @@ la implementación por fakes. No hay paquete de estado externo: se usan `ChangeN
 flutter pub get
 flutter run --dart-define-from-file=env.json          # sin esto aparece "Falta configurar Supabase"
 flutter analyze
-flutter test                                          # 32 pruebas, sin internet
+flutter test                                          # 76 pruebas, sin internet
 flutter drive --driver=test_driver/integration_test.dart \
   --target=integration_test/app_test.dart --dart-define-from-file=env.json -d <id>
 flutter build apk --release --dart-define-from-file=env.json
@@ -189,14 +192,22 @@ flutter build apk --release --dart-define-from-file=env.json
   no revela si el correo existe: devuelve un usuario con `identities` vacío. Ahora
   `SupabaseAuthRepositorio.registrar` lo detecta (`correoYaRegistrado`) y muestra "Este correo
   ya está registrado…". Hay pruebas en `test/unidad_test.dart` y `test/widget_test.dart`.
+- **Pruebas E2E con ubicación:** `flutter drive` desinstala la app al terminar y se pierde el
+  permiso; instala y concede antes (`xcrun simctl privacy <udid> grant location`,
+  `adb shell pm grant`). En el emulador Android la posición se fija con
+  `adb shell appops set com.android.shell android:mock_location allow` y
+  `adb shell cmd location providers set-test-provider-location gps --location -16.51,-68.127`.
+  En el simulador iOS la pantalla puede quedar congelada con `flutter drive` (capturas en
+  blanco): lanzar la app de prueba directo y capturar con `xcrun simctl io screenshot` al ver
+  `[CAPTURA]` en `log stream`.
 - **Simulador iOS:** no se puede escribir a mano en los campos de Flutter con las
   herramientas de automatización; usa `integration_test`. En el emulador Android, `adb input`
   pierde caracteres cuando la Mac está cargada.
 
 ## 13. Pendientes
 
-- **Push de la rama `sprint2`** a `origin` (GitHub `VladDur/saludcerca`). Está pendiente de la
-  aprobación explícita del usuario.
+- Push de la rama `sprint3` a `origin` (GitHub `VladDur/saludcerca`): pendiente de la
+  aprobación explícita del usuario (`sprint2` ya se subió el 23/11/2026).
 - **Completar los datos `[COMPLETAR]` / `[CONFIRMAR]` del documento del Sprint 2**: unos 14
   datos del equipo, como las estimaciones de Planning Poker, el seguimiento y el feedback.
-- **Sprint 3:** HU‑03 farmacias de turno (nuevas tablas y RLS), HU‑12 a HU‑15.
+- **Sprint 4:** HU‑14, HU‑15, HU‑16 a HU‑20; revisar colores (feedback del Sprint 2).

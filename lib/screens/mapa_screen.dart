@@ -197,6 +197,7 @@ class _MapaScreenState extends State<MapaScreen> {
         // IgnorePointer: no bloquea los toques sobre marcadores cercanos.
         child: IgnorePointer(
             child: Semantics(
+          container: true,
           label: _ubicacion?.esGps == true
               ? 'Tu ubicación'
               : 'Plaza Murillo (referencia)',
@@ -244,14 +245,22 @@ class _MapaScreenState extends State<MapaScreen> {
                             headers: {'User-Agent': ApiCliente.userAgent}),
                         maxNativeZoom: 19,
                       ),
-                    MarkerLayer(markers: marcadores),
-                    const RichAttributionWidget(
-                      alignment: AttributionAlignment.bottomLeft,
-                      attributions: [
-                        TextSourceAttribution(
-                            '© colaboradores de OpenStreetMap'),
-                      ],
+                    // Atribución siempre visible (licencia ODbL de OSM).
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: Container(
+                        margin: const EdgeInsets.all(4),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 6, vertical: 2),
+                        color: esquema.surface.withValues(alpha: 0.85),
+                        child: Text('© colaboradores de OpenStreetMap',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                                fontSize: 13, color: esquema.onSurface)),
+                      ),
                     ),
+                    MarkerLayer(markers: marcadores),
                   ],
                 ),
                 if (_cargando)
@@ -434,6 +443,7 @@ class _MapaScreenState extends State<MapaScreen> {
           child: Row(children: [
             FilterChip(
               key: const Key('mapa_filtro_centros'),
+              showCheckmark: false,
               avatar: const Icon(Icons.local_hospital),
               label: Text('Centros (${_centros.length})'),
               selected: _verCentros,
@@ -442,6 +452,7 @@ class _MapaScreenState extends State<MapaScreen> {
             const SizedBox(width: 8),
             FilterChip(
               key: const Key('mapa_filtro_farmacias'),
+              showCheckmark: false,
               avatar: const Icon(Icons.local_pharmacy),
               label: Text('Farmacias de turno (${_turnos.length})'),
               selected: _verFarmacias,

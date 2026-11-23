@@ -1,0 +1,18 @@
+HTTP/2 200 
+content-type: application/json; charset=utf-8
+server: gunicorn/asgi
+x-nominatim-server: dulcy.openstreetmap.org
+accept-ranges: bytes
+age: 0
+date: Mon, 23 Nov 2026 14:56:25 GMT
+via: 1.1 varnish
+x-served-by: cache-gru-sbgr1930032-GRU
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1795445784.401877,VS0,VE601
+vary: accept-language, Accept-Encoding
+strict-transport-security: max-age=300
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 864
+
+{"place_id":4175824,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright","osm_type":"way","osm_id":917867417,"lat":"-16.5100583","lon":"-68.1269424","category":"highway","type":"primary","place_rank":26,"importance":0.053402242313267685,"addresstype":"primary","name":"Calle Belisario Salinas","display_name":"Calle Belisario Salinas, Kantutani, Sopocachi, Cotahuma, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia","address":{"road":"Calle Belisario Salinas","neighbourhood":"Kantutani","quarter":"Sopocachi","suburb":"Cotahuma","district":"Cotahuma","city":"Municipio Nuestra Señora de La Paz","province":"Provincia Pedro Domingo Murillo","state":"La Paz","ISO3166-2-lvl4":"BO-L","country":"Bolivia","country_code":"bo"},"boundingbox":["-16.5106680","-16.5098692","-68.1275335","-68.1267496"]}

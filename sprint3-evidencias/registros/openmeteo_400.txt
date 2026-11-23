@@ -1,0 +1,12 @@
+HTTP/1.1 400 Bad Request
+Date: Mon, 23 Nov 2026 14:56:20 GMT
+Content-Type: application/json; charset=utf-8
+Content-Length: 82
+Connection: keep-alive
+X-RateLimit-Cost: 1.0
+X-RateLimit-Limit: 600.0
+X-RateLimit-Remaining: 597.9
+X-RateLimit-Reset: 1795445840
+X-RateLimit-Window: 60
+
+{"error":true,"reason":"Latitude must be in range of -90 to 90°. Given: -200.0."}

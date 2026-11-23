@@ -49,3 +49,6 @@ app.*.map.json
 
 # Credenciales locales de Supabase (no subir)
 env.json
+
+# Entregables generados (zip del código)
+/Entrega_Sprint3/

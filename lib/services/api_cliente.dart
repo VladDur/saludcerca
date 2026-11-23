@@ -25,26 +25,31 @@ class ApiException implements Exception {
 
   const ApiException(this.tipo, this.servicio, {this.codigoHttp, this.detalle});
 
+  /// "del clima" en vez de "de el clima".
+  String get _del => servicio.startsWith('el ')
+      ? 'del ${servicio.substring(3)}'
+      : 'de $servicio';
+
   /// Mensaje en español para la interfaz.
   String get mensaje {
     switch (tipo) {
       case TipoErrorApi.sinConexion:
         return 'Sin conexión a internet. No pudimos cargar $servicio.';
       case TipoErrorApi.tiempoAgotado:
-        return 'El servicio de $servicio tardó demasiado en responder. '
+        return 'El servicio $_del tardó demasiado en responder. '
             'Intenta otra vez.';
       case TipoErrorApi.limiteSolicitudes:
         return 'Hiciste muchas consultas seguidas. Espera unos segundos.';
       case TipoErrorApi.noEncontrado:
-        return 'No encontramos información de $servicio (error 404).';
+        return 'No encontramos información $_del (error 404).';
       case TipoErrorApi.servidor:
-        return 'El servicio de $servicio no está disponible ahora '
+        return 'El servicio $_del no está disponible ahora '
             '(error $codigoHttp). Intenta más tarde.';
       case TipoErrorApi.respuestaHttp:
-        return 'El servicio de $servicio respondió con un error '
+        return 'El servicio $_del respondió con un error '
             '($codigoHttp).';
       case TipoErrorApi.formatoInvalido:
-        return 'Recibimos datos de $servicio que no entendemos. '
+        return 'Recibimos datos $_del que no entendemos. '
             'Intenta más tarde.';
     }
   }

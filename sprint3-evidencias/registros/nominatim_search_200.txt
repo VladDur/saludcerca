@@ -1,0 +1,18 @@
+HTTP/2 200 
+content-type: application/json; charset=utf-8
+server: gunicorn/asgi
+x-nominatim-server: vhagar.openstreetmap.org
+accept-ranges: bytes
+age: 0
+date: Mon, 23 Nov 2026 14:56:22 GMT
+via: 1.1 varnish
+x-served-by: cache-gru-sbgr1930027-GRU
+x-cache: MISS
+x-cache-hits: 0
+x-timer: S1795445782.470362,VS0,VE503
+vary: accept-language, Accept-Encoding
+strict-transport-security: max-age=300
+alt-svc: h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+content-length: 2716
+
+[{"place_id":4148332,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright","osm_type":"way","osm_id":288586921,"lat":"-16.5103129","lon":"-68.1267271","category":"leisure","type":"park","place_rank":25,"importance":0.19619210675062,"addresstype":"square","name":"Plaza Abaroa","display_name":"Plaza Abaroa, Kantutani, Sopocachi, Cotahuma, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia","boundingbox":["-16.5113022","-16.5099310","-68.1274653","-68.1259837"]},{"place_id":4134112,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright","osm_type":"way","osm_id":241157569,"lat":"-16.5027793","lon":"-68.2123427","category":"leisure","type":"park","place_rank":24,"importance":0.08005351567864497,"addresstype":"park","name":"Plaza Eduardo Avaroa","display_name":"Plaza Eduardo Avaroa, Distrito 4, El Alto, Provincia Pedro Domingo Murillo, La Paz, Bolivia","boundingbox":["-16.5031957","-16.5023664","-68.2127607","-68.2119235"]},{"place_id":4168940,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright","osm_type":"way","osm_id":234425170,"lat":"-16.5291145","lon":"-68.1841926","category":"leisure","type":"park","place_rank":24,"importance":0.08005351567864497,"addresstype":"square","name":"Plaza Eduardo Avaroa","display_name":"Plaza Eduardo Avaroa, Distrito 2, El Alto, Provincia Pedro Domingo Murillo, La Paz, Bolivia","boundingbox":["-16.5294965","-16.5287331","-68.1845888","-68.1837962"]},{"place_id":4117716,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright","osm_type":"node","osm_id":6760957784,"lat":"-16.5111973","lon":"-68.1270249","category":"highway","type":"bus_stop","place_rank":30,"importance":6.890897993434069e-05,"addresstype":"highway","name":"PumaKatari - Plaza Avaroa (Achumani)","display_name":"PumaKatari - Plaza Avaroa (Achumani), Avenida Sánchez Lima, Kantutani, Sopocachi, Cotahuma, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia","boundingbox":["-16.5112473","-16.5111473","-68.1270749","-68.1269749"]},{"place_id":4142817,"licence":"Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright","osm_type":"node","osm_id":4366560418,"lat":"-16.5114111","lon":"-68.1266440","category":"amenity","type":"pharmacy","place_rank":30,"importance":6.890897993434069e-05,"addresstype":"amenity","name":"Farmacorp - Plaza Avaroa","display_name":"Farmacorp - Plaza Avaroa, Calle Pedro Salazar, Kantutani, Sopocachi, Cotahuma, Municipio Nuestra Señora de La Paz, Provincia Pedro Domingo Murillo, La Paz, Bolivia","boundingbox":["-16.5114611","-16.5113611","-68.1266940","-68.1265940"]}]

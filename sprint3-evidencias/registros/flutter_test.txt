@@ -1,0 +1,112 @@
+00:00 +0: loading /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart
+00:00 +0: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Validadores de formularios correo
+00:00 +1: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Validadores de formularios contraseña nueva exige 6 caracteres con letras y números
+00:00 +2: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Validadores de formularios confirmar contraseña
+00:00 +3: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +4: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +5: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +6: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +7: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +8: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +9: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +10: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +11: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +12: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +13: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +14: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +15: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +16: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +16: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP 200 con JSON válido devuelve los datos y envía User-Agent
+[API] GET api.ejemplo.com/datos -> 200 (6 ms)
+00:00 +17: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +18: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +18: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 404 -> TipoErrorApi.noEncontrado
+[API] GET api.ejemplo.com/datos -> 404 (0 ms)
+00:00 +19: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +19: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 429 -> TipoErrorApi.limiteSolicitudes
+[API] GET api.ejemplo.com/datos -> 429 (0 ms)
+00:00 +20: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +20: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 500 -> TipoErrorApi.servidor
+[API] GET api.ejemplo.com/datos -> 500 (0 ms)
+00:00 +21: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +21: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 503 -> TipoErrorApi.servidor
+[API] GET api.ejemplo.com/datos -> 503 (0 ms)
+00:00 +22: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +22: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 400 -> TipoErrorApi.respuestaHttp
+[API] GET api.ejemplo.com/datos -> 400 (0 ms)
+00:00 +23: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +23: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 403 -> TipoErrorApi.respuestaHttp
+[API] GET api.ejemplo.com/datos -> 403 (0 ms)
+00:00 +24: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +24: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP JSON mal formado -> formatoInvalido
+[API] GET api.ejemplo.com/datos -> 200 (0 ms)
+00:00 +25: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +25: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP sin conexión -> sinConexion
+[API] GET api.ejemplo.com/datos -> SIN RED (0 ms)
+00:00 +26: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +26: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP respuesta lenta -> tiempoAgotado
+[API] GET api.ejemplo.com/datos -> TIMEOUT (52 ms)
+00:00 +27: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +28: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +28: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Open-Meteo (clima) convierte la respuesta real y genera avisos de salud
+[API] GET api.open-meteo.com/v1/forecast -> 200 (0 ms)
+00:00 +29: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +29: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Open-Meteo (clima) usa caché: no repite la consulta en 15 minutos
+[API] GET api.open-meteo.com/v1/forecast -> 200 (0 ms)
+00:00 +30: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +30: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Open-Meteo (clima) JSON con campos faltantes -> formatoInvalido
+[API] GET api.open-meteo.com/v1/forecast -> 200 (0 ms)
+00:00 +31: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +32: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +33: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +33: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Nominatim (geocodificación) convierte resultados de búsqueda (lat/lon llegan como texto)
+[API] GET nominatim.openstreetmap.org/search -> 200 (0 ms)
+00:00 +34: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +34: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Nominatim (geocodificación) dirección inversa legible
+[API] GET nominatim.openstreetmap.org/reverse -> 200 (0 ms)
+00:00 +35: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +35: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Nominatim (geocodificación) "Unable to geocode" devuelve null sin error
+[API] GET nominatim.openstreetmap.org/reverse -> 200 (0 ms)
+00:00 +36: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +36: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Nominatim (geocodificación) resultado con lat no numérica -> formatoInvalido
+[API] GET nominatim.openstreetmap.org/search -> 200 (0 ms)
+00:00 +37: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +38: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +39: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +40: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +41: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +42: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +43: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +44: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +45: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +46: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +47: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:01 +48: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:01 +49: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas credenciales incorrectas muestran un mensaje de error
+00:01 +50: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros sin permiso usa Plaza Murillo y explica el motivo
+00:01 +51: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +52: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +53: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +54: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:02 +55: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:02 +56: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-03 farmacias de turno filtra por ciudad y consulta el turno de mañana
+00:02 +57: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas registro valida y crea la cuenta
+00:02 +58: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-03 farmacias de turno detalle con dirección, turno y teléfono
+00:02 +59: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: registro con un correo ya registrado muestra el aviso
+00:02 +60: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-03 farmacias de turno error de la API REST muestra mensaje y Reintentar
+00:02 +61: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Consultas dinámicas de centros filtra por ciudad y por emergencias
+00:03 +62: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-12 mapa muestra centros, farmacias y al usuario; filtra capas
+00:03 +63: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD favoritos: crear, editar nota y baja lógica
+00:03 +64: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD favoritos: crear, editar nota y baja lógica
+00:03 +65: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-12 mapa error de Nominatim (429) se muestra en la búsqueda
+00:03 +66: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD recordatorios: validación, crear, editar y baja lógica
+00:04 +67: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD recordatorios: validación, crear, editar y baja lógica
+00:04 +68: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: 5 pestañas sin desbordes con texto grande
+00:04 +69: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD perfil: valida y actualiza datos
+00:04 +70: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro texto grande se aplica en toda la app
+00:04 +71: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro alto contraste y modo oscuro cambian el tema
+00:05 +72: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro las preferencias guardadas se aplican al reabrir
+00:05 +73: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro botones ≥ 48 dp (Android) y ≥ 44 pt (iOS) · normal
+00:05 +74: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro botones ≥ 48 dp (Android) y ≥ 44 pt (iOS) · texto grande + alto contraste + oscuro
+00:05 +75: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro contraste de texto suficiente en alto contraste
+00:05 +76: All tests passed!

@@ -1,0 +1,247 @@
+# Registro de solicitudes a Supabase (Auth + API REST)
+# Fecha: 2026-11-23T11:06:33
+# URL, claves y JWT ocultos.
+
+### 1. Supabase Auth con contraseña incorrecta
+POST https://<proyecto>.supabase.co/auth/v1/token?grant_type=password
+apikey: <anon-key>
+Content-Type: application/json
+
+{"email": "vladi@saludcerca.app", "password": "********"}
+
+--> HTTP 400
+{
+  "code": 400,
+  "error_code": "invalid_credentials",
+  "msg": "Invalid login credentials"
+}
+
+### 2. Supabase Auth: inicio de sesión (devuelve el JWT)
+POST https://<proyecto>.supabase.co/auth/v1/token?grant_type=password
+apikey: <anon-key>
+Content-Type: application/json
+
+{"email": "vladi@saludcerca.app", "password": "********"}
+
+--> HTTP 200
+{
+  "access_token": "<JWT>",
+  "token_type": "bearer",
+  "expires_in": 3600,
+  "expires_at": 1795449988,
+  "refresh_token": "<oculto>",
+  "user": {
+    "id": "3b239f88-f546-465c-8293-4cf3edbc5717",
+    "aud": "authenticated",
+    "role": "authenticated",
+    "email": "vladi@saludcerca.app",
+    "email_confirmed_at": "2026-11-16T18:36:42.16332Z",
+    "phone": "",
+    "confirmed_at": "2026-11-16T18:36:42.16332Z",
+    "last_sign_in_at": "2026-11-23T15:06:28.578804959Z",
+    "app_metadata": {
+      "provider": "email",
+      "providers": [
+        "email"
+      ]
+    },
+    "user_metadata": {
+      "email_verified": true
+    },
+    "identities": [
+      {
+        "identity_id": "3efb4349-d241-468b-9cad-2ee3d3a3dd52",
+        "id": "3b239f88-f546-465c-8293-4cf3edbc5717",
+        "user_id": "3b239f88-f546-465c-8293-4cf3edbc5717",
+        "identity_data": {
+          "email": "vladi@saludcerca.app",
+          "email_verified": false,
+          "phone_verified": false,
+          "sub": "3b239f88-f546-465c-8293-4cf3edbc5717"
+        },
+        "provider": "email",
+        "last_sign_in_at": "2026-11-16T18:36:42.15578Z",
+        "created_at": "2026-11-16T18:36:42.155836Z",
+        "updated_at": "2026-11-16T18:36:42.155836Z",
+        "email": "vladi@saludcerca.app"
+      }
+    ],
+    "created_at": "2026-11-16T18:36:42.143725Z",
+    "updated_at": "2026-11-23T15:06:28.620499Z",
+    "is_anonymous": false
+  },
+  "weak_password": null
+}
+
+### 3. API REST: farmacias de turno de hoy (con JWT)
+GET https://<proyecto>.supabase.co/rest/v1/turnos_farmacia?select=id,fecha,hora_inicio,hora_fin,farmacias!inner(id,nombre,ciudad,zona,direccion,telefono,latitud,longitud)&fecha=eq.2026-11-23&activo=eq.true
+apikey: <anon-key>
+Content-Type: application/json
+Authorization: Bearer <JWT>
+
+--> HTTP 200
+[
+  {
+    "id": "eb29677e-4f9c-4f38-969a-120b8b69a08b",
+    "fecha": "2026-11-23",
+    "hora_inicio": "08:00:00",
+    "hora_fin": "08:00:00",
+    "farmacias": {
+      "id": "c4d291c0-ff38-46de-a137-f73b81449489",
+      "zona": "La Ceja",
+      "ciudad": "El Alto",
+      "nombre": "Farmacia Ceja",
+      "latitud": -16.504,
+      "longitud": -68.164,
+      "telefono": "2-100-0007",
+      "direccion": "Av. 6 de Marzo N° 10, La Ceja"
+    }
+  },
+  {
+    "id": "a5b549f7-3fe5-4fbd-8e68-661f09fc7f7f",
+    "fecha": "2026-11-23",
+    "hora_inicio": "08:00:00",
+    "hora_fin": "08:00:00",
+    "farmacias": {
+      "id": "d864d610-de10-46a3-b281-1b1594ecbee7",
+      "zona": "Senkata",
+      "ciudad": "El Alto",
+      "nombre": "Farmacia Senkata",
+      "latitud": -16.556,
+      "longitud": -68.196,
+      "telefono": "2-100-0012",
+      "direccion": "Av. 6 de Marzo N° 4000, Senkata"
+    }
+  },
+  {
+    "id": "063c355e-f4f8-4d9a-a5fd-410f893cd9e0",
+    "fecha": "2026-11-23",
+    "hora_inicio": "08:00:00",
+    "hora_fin": "08:00:00",
+    "farmacias": {
+      "id": "114c4f36-e115-42e3-b180-631cb0b018a8",
+      "zona": "Miraflores",
+      "ciudad": "La Paz",
+      "nombre": "Farmacia Miraflores Salud",
+      "latitud": -16.4985,
+      "longitud": -68.1185,
+      "telefono": "2-100-0003",
+      "direccion": "Av. Busch N° 1500, Miraflores"
+    }
+  },
+  {
+    "id": "7f50067f-871c-4db7-b42f-afa06f1f7abe",
+    "fecha": "2026-11-23",
+    "hora_inicio": "08:00:00",
+    "hora_fin": "08:00:00",
+    "farmacias": {
+      "id": "ef839755-9879-432e-b3dd-a22ec357fa0b",
+      "zona": "Sopocachi",
+      "ciudad": "La Paz",
+      "nombre": "Farmacia Sopocachi Central",
+      "latitud": -16.509,
+      "longitud": -68.1255,
+      "telefono": "2-100-0002",
+      "direccion": "Av. 6 de Agosto N° 2050, Sopocachi"
+    }
+  }
+]
+
+### 4. API REST: filtro por ciudad (El Alto)
+GET https://<proyecto>.supabase.co/rest/v1/turnos_farmacia?select=id,fecha,hora_inicio,hora_fin,farmacias!inner(id,nombre,ciudad,zona,direccion,telefono,latitud,longitud)&fecha=eq.2026-11-23&activo=eq.true&farmacias.ciudad=eq.El%20Alto
+apikey: <anon-key>
+Content-Type: application/json
+Authorization: Bearer <JWT>
+
+--> HTTP 200
+[
+  {
+    "id": "eb29677e-4f9c-4f38-969a-120b8b69a08b",
+    "fecha": "2026-11-23",
+    "hora_inicio": "08:00:00",
+    "hora_fin": "08:00:00",
+    "farmacias": {
+      "id": "c4d291c0-ff38-46de-a137-f73b81449489",
+      "zona": "La Ceja",
+      "ciudad": "El Alto",
+      "nombre": "Farmacia Ceja",
+      "latitud": -16.504,
+      "longitud": -68.164,
+      "telefono": "2-100-0007",
+      "direccion": "Av. 6 de Marzo N° 10, La Ceja"
+    }
+  },
+  {
+    "id": "a5b549f7-3fe5-4fbd-8e68-661f09fc7f7f",
+    "fecha": "2026-11-23",
+    "hora_inicio": "08:00:00",
+    "hora_fin": "08:00:00",
+    "farmacias": {
+      "id": "d864d610-de10-46a3-b281-1b1594ecbee7",
+      "zona": "Senkata",
+      "ciudad": "El Alto",
+      "nombre": "Farmacia Senkata",
+      "latitud": -16.556,
+      "longitud": -68.196,
+      "telefono": "2-100-0012",
+      "direccion": "Av. 6 de Marzo N° 4000, Senkata"
+    }
+  }
+]
+
+### 5. API REST sin JWT (rol anon): RLS lo bloquea
+GET https://<proyecto>.supabase.co/rest/v1/turnos_farmacia?select=id&limit=1
+apikey: <anon-key>
+Content-Type: application/json
+
+--> HTTP 401
+{
+  "code": "42501",
+  "details": null,
+  "hint": "Grant the required privileges to the current role with: GRANT SELECT ON public.turnos_farmacia TO anon;",
+  "message": "permission denied for table turnos_farmacia"
+}
+
+### 6. API REST: el usuario intenta crear una farmacia (solo lectura)
+POST https://<proyecto>.supabase.co/rest/v1/farmacias
+apikey: <anon-key>
+Content-Type: application/json
+Authorization: Bearer <JWT>
+
+{"nombre": "Intento", "ciudad": "La Paz", "zona": "x", "direccion": "x", "telefono": "1", "latitud": 0, "longitud": 0}
+
+--> HTTP 403
+{
+  "code": "42501",
+  "details": null,
+  "hint": "Grant the required privileges to the current role with: GRANT INSERT ON public.farmacias TO authenticated;",
+  "message": "permission denied for table farmacias"
+}
+
+### 7. API REST: recurso inexistente
+GET https://<proyecto>.supabase.co/rest/v1/tabla_que_no_existe?select=id
+apikey: <anon-key>
+Content-Type: application/json
+Authorization: Bearer <JWT>
+
+--> HTTP 404
+{
+  "code": "PGRST205",
+  "details": null,
+  "hint": null,
+  "message": "Could not find the table 'public.tabla_que_no_existe' in the schema cache"
+}
+
+### 8. API REST con un JWT inválido
+GET https://<proyecto>.supabase.co/rest/v1/turnos_farmacia?select=id
+apikey: <anon-key>
+Content-Type: application/json
+Authorization: Bearer <JWT>
+
+--> HTTP 401
+{
+  "code": "PGRST301",
+  "details": "None of the keys was able to decode the JWT",
+  "hint": null,
+  "message": "No suitable key or wrong key type"
+}

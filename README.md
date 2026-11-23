@@ -1,19 +1,33 @@
-# SaludCerca · Sprint 2 (Flutter + Supabase, rol USUARIO)
+# SaludCerca · Sprint 3 (Flutter + Supabase + APIs, rol USUARIO)
 
-App móvil híbrida para encontrar centros de salud en La Paz y El Alto.
-Una sola base de código Flutter genera la app de **Android (APK)** y la de **iOS**.
-El backend es **Supabase** (PostgreSQL + Auth + Row Level Security).
+App móvil híbrida para encontrar centros de salud y **farmacias de turno** en La Paz y El
+Alto, pensada para adultos mayores. Una sola base de código Flutter genera la app de
+**Android (APK)** y la de **iOS**. El backend es **Supabase** (PostgreSQL + Auth + Row Level
+Security) y el Sprint 3 agrega el consumo de **APIs externas** por HTTPS.
 
-## Qué incluye este incremento
+## Qué incluye este incremento (Sprint 3)
 
-| Módulo | Detalle |
+| HU / módulo | Detalle |
 |---|---|
-| Autenticación | Registro, inicio y cierre de sesión con correo y contraseña (Supabase Auth). La sesión queda guardada al reabrir la app. Las pantallas principales solo se ven con sesión iniciada (`AuthGate`). |
-| Base de datos | 6 tablas + 1 vista, relaciones 1‑1, 1‑N y N‑M, políticas RLS (cada usuario solo ve sus datos), triggers y datos de prueba. Scripts en `supabase/`. |
-| Consultas dinámicas | Lista de centros desde Supabase con búsqueda por nombre o zona y filtros por ciudad, tipo, emergencias y "abiertos ahora". Distancia calculada con Haversine. |
-| CRUD | **Recordatorios** (crear, ver, editar, eliminar con baja lógica), **Favoritos** (guardar con nota, editar nota, quitar con baja lógica) y **Perfil** (ver y editar datos). Formularios validados y mensajes de confirmación/error. |
-| HU‑05 Accesibilidad | En la pestaña **Perfil**: *Texto grande* (×1,3 sobre el tamaño del sistema) y *Alto contraste*. Se aplican en todas las pantallas y se mantienen al cerrar y abrir la app. Todos los botones miden al menos 48 dp (Android) / 44 pt (iOS). |
-| HU‑06 Modo oscuro (nueva) | En **Perfil → Tema**: Claro, Oscuro o Sistema. Persistente. Se combina con alto contraste. |
+| **HU‑03 Farmacias de turno** | Nueva pestaña **Farmacias**: farmacias de turno de hoy o de mañana, filtro por ciudad, detalle (dirección, turno, teléfono) y "Ver en el mapa". Datos de las tablas nuevas `farmacias` y `turnos_farmacia` (1‑N) por la **API REST de Supabase** con el JWT del usuario y RLS de solo lectura. |
+| **HU‑13 Ubicación del teléfono** | Con permiso, la app usa el GPS (`geolocator`) y ordena centros y farmacias por cercanía. Muestra la dirección aproximada ("Calle…, Sopocachi, La Paz") con **Nominatim** (geocodificación inversa). Sin GPS, sin permiso o fuera de La Paz/El Alto usa Plaza Murillo y explica el motivo. |
+| **HU‑12 Mapa interactivo** | Mapa de **OpenStreetMap** (`flutter_map`) con marcadores de centros, farmacias de turno y del usuario; filtros por capa; búsqueda de direcciones con **Nominatim**; tocar un marcador abre su ficha. Atribución "© colaboradores de OpenStreetMap". |
+| **Clima y avisos de salud** | Tarjeta en **Centros** con el clima actual de **Open-Meteo** (sin clave) y avisos preventivos: UV alto, frío intenso, lluvia y calor. |
+| Manejo de errores | Solo HTTPS, tiempo máximo de 10 s, códigos HTTP (404, 429, 5xx…), sin conexión y JSON inesperado se convierten en mensajes claros con botón **Reintentar**. |
+| Sprint 2 (se mantiene) | Autenticación, CRUD de recordatorios, favoritos y perfil, HU‑05 accesibilidad y HU‑06 modo oscuro. |
+
+## APIs que usa la app
+
+| API | Uso | URL base | Autenticación |
+|---|---|---|---|
+| Supabase Auth | Registro e inicio de sesión; entrega un **JWT** | `https://<proyecto>.supabase.co/auth/v1` | anon key + correo y contraseña |
+| Supabase REST (PostgREST) | Centros, favoritos, recordatorios, perfil, **farmacias de turno** | `https://<proyecto>.supabase.co/rest/v1` | `apikey` + `Authorization: Bearer <JWT>`; RLS |
+| Open-Meteo | Clima actual y del día | `https://api.open-meteo.com/v1/forecast` | Ninguna (gratuita) |
+| Nominatim (OSM) | Buscar direcciones y dirección del usuario | `https://nominatim.openstreetmap.org` | Ninguna; **máx. 1 solicitud/s** y `User-Agent` propio |
+| Teselas OSM | Imágenes del mapa | `https://tile.openstreetmap.org/{z}/{x}/{y}.png` | Ninguna; `User-Agent` propio |
+
+Los detalles de endpoints, ejemplos de solicitud y respuesta y códigos HTTP están en
+[`SPRINT3_NOTAS.md`](SPRINT3_NOTAS.md).
 
 ## Requisitos
 
@@ -21,6 +35,7 @@ El backend es **Supabase** (PostgreSQL + Auth + Row Level Security).
 - Android Studio con un emulador (probado en Pixel 9, Android 17) o un teléfono Android
 - Xcode con simulador iOS (probado en iPhone 17, iOS 26.5) — solo en macOS
 - Un proyecto de Supabase
+- Conexión a internet (las APIs de clima y mapa son públicas)
 
 ## Instalación paso a paso
 
@@ -28,7 +43,10 @@ El backend es **Supabase** (PostgreSQL + Auth + Row Level Security).
 
 1. Entra a <https://supabase.com/dashboard> y abre el proyecto **SaludCerca**.
 2. Ve a **SQL Editor → New query**, pega el contenido de `supabase/schema.sql` y pulsa **Run**.
-3. Repite con `supabase/seed.sql` (carga 10 centros y 16 servicios de prueba).
+   El script es idempotente: en el Sprint 3 agrega `farmacias` y `turnos_farmacia` con RLS.
+3. Repite con `supabase/seed.sql`: carga 10 centros, 16 servicios, 12 farmacias y sus
+   turnos (2 en La Paz y 2 en El Alto cada día, durante 4 meses). Si los turnos vencen,
+   vuelve a ejecutar el último bloque del archivo.
 4. Opcional para pruebas: en **Authentication → Sign In / Providers → Email** puedes
    desactivar *Confirm email* para que las cuentas nuevas entren sin confirmar el correo.
 
@@ -46,7 +64,8 @@ El backend es **Supabase** (PostgreSQL + Auth + Row Level Security).
 ```
 
 `env.json` está en `.gitignore`: no se sube al repositorio. La anon key es pública por
-diseño; la protección de los datos la dan las políticas RLS.
+diseño; la protección de los datos la dan las políticas RLS. Open-Meteo y Nominatim no
+necesitan clave.
 
 ### 3. Ejecutar
 
@@ -54,6 +73,9 @@ diseño; la protección de los datos la dan las políticas RLS.
 flutter pub get
 flutter run --dart-define-from-file=env.json
 ```
+
+La primera vez la app pide permiso de ubicación. Si lo rechazas, sigue funcionando con
+Plaza Murillo como referencia.
 
 Generar el APK de Android:
 
@@ -68,25 +90,42 @@ Para iOS: `flutter build ios --dart-define-from-file=env.json` (requiere Xcode y
 
 ```bash
 flutter analyze   # análisis estático
-flutter test      # 32 pruebas unitarias y de widgets (sin internet, repositorios falsos)
+flutter test      # 76 pruebas unitarias y de widgets (sin internet: APIs y repositorios falsos)
 ```
 
-Prueba **end-to-end contra Supabase real** (login, consultas, CRUD, RLS, HU‑05 accesibilidad, HU‑06 modo oscuro),
-que además guarda las capturas en `sprint2-evidencias/`. Requiere `TEST_EMAIL` y
-`TEST_PASSWORD` en `env.json` y un emulador o simulador abierto:
+Las pruebas de las APIs (`test/apis_test.dart`) usan `MockClient` para simular respuestas
+200, 400, 403, 404, 429, 500 y 503, JSON mal formado, falta de conexión y tiempo agotado.
+
+**Prueba end-to-end del Sprint 3** contra los servicios reales (Supabase, Open-Meteo,
+Nominatim y OSM). Guarda las capturas en `sprint3-evidencias/`. Requiere `TEST_EMAIL` y
+`TEST_PASSWORD` en `env.json`, y que el dispositivo tenga permiso de ubicación y una
+posición en La Paz:
 
 ```bash
-flutter drive --driver=test_driver/integration_test.dart \
-  --target=integration_test/app_test.dart \
+# Android (emulador): instalar una vez, dar permiso y fijar la posición en Sopocachi
+adb shell pm grant com.example.saludcerca android.permission.ACCESS_FINE_LOCATION
+adb emu geo fix -68.1270 -16.5100
+# iOS (simulador)
+xcrun simctl privacy booted grant location com.example.saludcerca
+xcrun simctl location booted set -16.5100,-68.1270
+
+flutter drive --driver=test_driver/sprint3_driver.dart \
+  --target=integration_test/sprint3_test.dart \
   --dart-define-from-file=env.json -d <id-del-dispositivo>
 ```
+
+La prueba end-to-end del Sprint 2 sigue disponible con
+`--driver=test_driver/integration_test.dart --target=integration_test/app_test.dart`.
 
 ## URLs y credenciales de prueba
 
 | Dato | Valor |
 |---|---|
 | Panel de Supabase | <https://supabase.com/dashboard> → proyecto **SaludCerca** |
-| URL de la API | `SUPABASE_URL` en `env.json` (se entrega aparte, no se sube a git) |
+| URL de la API de Supabase | `SUPABASE_URL` en `env.json` (se entrega aparte, no se sube a git) |
+| Open-Meteo | <https://api.open-meteo.com/v1/forecast> (documentación: <https://open-meteo.com/en/docs>) |
+| Nominatim | <https://nominatim.openstreetmap.org> (política: <https://operations.osmfoundation.org/policies/nominatim/>) |
+| Repositorio | <https://github.com/VladDur/saludcerca> (rama `sprint3`) |
 | Usuario de prueba | `vladi@saludcerca.app` |
 | Contraseña de prueba | `Prueba123` |
 
@@ -96,25 +135,27 @@ También puedes crear tu propia cuenta desde la pantalla **Crear una cuenta**.
 
 ```
 lib/
-  main.dart                  arranque: carga ajustes, inicializa Supabase
+  main.dart                  arranque y dependencias reales (Supabase, APIs, GPS)
   app.dart                   MaterialApp, temas, texto grande y AuthGate
   config/env.dart            URL y anon key (desde --dart-define)
   core/                      validadores, mensajes de error, AppScope (inyección)
-  data/repositorios.dart     interfaces de acceso a datos
-  data/supabase/             implementación con Supabase
-  models/                    centro_salud, perfil, favorito, recordatorio
+  data/repositorios.dart     interfaces de acceso a datos (incluye FarmaciasRepositorio)
+  data/supabase/             implementación con Supabase (API REST)
+  services/                  Sprint 3: api_cliente (HTTP), clima (Open-Meteo),
+                             geocodificacion (Nominatim), ubicacion (GPS)
+  models/                    centro_salud, farmacia, clima, perfil, favorito, recordatorio
   settings/                  AjustesController (HU‑05 y HU‑06, persistente)
-  screens/                   auth (login, registro), shell, centros, detalle,
+  screens/                   auth, shell (5 pestañas), centros, farmacias, mapa, detalle,
                              favoritos, recordatorios, formulario, perfil
   theme/app_theme.dart       4 temas: claro, oscuro, alto contraste claro/oscuro
-  widgets/                   tarjetas, etiquetas, mensajes
+  widgets/                   tarjetas, etiquetas, mensajes, tarjeta_clima, panel_ubicacion
 supabase/
   schema.sql                 tablas, vista, triggers, RLS y permisos
-  seed.sql                   datos de prueba
-test/                        pruebas unitarias y de widgets (repositorios falsos)
-integration_test/            prueba end-to-end contra Supabase (Android e iOS)
-test_driver/                 guarda las capturas de la prueba end-to-end
-sprint2-evidencias/          capturas Android/iOS y salidas de test/analyze
+  seed.sql                   datos de prueba (centros, servicios, farmacias y turnos)
+test/                        unitarias y de widgets (fakes y MockClient)
+integration_test/            end-to-end Sprint 2 (app_test) y Sprint 3 (sprint3_test)
+test_driver/                 guardan las capturas de las pruebas end-to-end
+sprint3-evidencias/          capturas Android/iOS y registros del Sprint 3
 ```
 
 ## Modelo de datos
@@ -122,10 +163,14 @@ sprint2-evidencias/          capturas Android/iOS y salidas de test/analyze
 ```
 auth.users 1──1 perfiles 1──N favoritos N──1 centros_salud N──M servicios
                          1──N recordatorios N──1 centros_salud   (centro_servicios)
+farmacias 1──N turnos_farmacia                                   (Sprint 3)
 ```
 
 - `perfiles`: se crea solo al registrarse (trigger sobre `auth.users`).
 - `favoritos` y `recordatorios`: columna `activo` para la **baja lógica**; no existe política
   DELETE, así que nadie puede borrar filas físicamente desde la app.
-- `centros_salud`, `servicios`, `centro_servicios`: catálogo de solo lectura para usuarios
-  autenticados. La vista `v_centros` (con `security_invoker`) junta cada centro con sus servicios.
+- `centros_salud`, `servicios`, `centro_servicios`, `farmacias`, `turnos_farmacia`: catálogos
+  de solo lectura para usuarios autenticados (el rol `anon` no ve nada). El administrador los
+  gestionará desde un panel web en una etapa posterior.
+- Un turno de farmacia dura 24 horas: empieza el día `fecha` a las 08:00 y termina al día
+  siguiente a las 08:00.

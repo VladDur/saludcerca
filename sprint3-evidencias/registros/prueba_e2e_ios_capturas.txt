@@ -1,0 +1,42 @@
+# Salida de la prueba end-to-end en iOS (simulador iPhone 17), ejecutada en el propio simulador;
+# las capturas se tomaron con xcrun simctl al recibir cada línea [CAPTURA].
+2026-11-23 11:58:56.420 Df Runner[16684:37dcf] (Flutter) flutter: The Dart VM service is listening on http://127.0.0.1:57697/AoPbA0jqaeI=/
+2026-11-23 11:58:56.730 Df Runner[16684:37dac] (Flutter) flutter: 00:00 +0: Sprint 3 end-to-end: APIs reales
+2026-11-23 11:58:56.915 Df Runner[16684:37dac] (Flutter) flutter: supabase.supabase_flutter: INFO: ***** Supabase init completed *****
+2026-11-23 11:59:03.638 Df Runner[16684:37dac] (Flutter) flutter: [AUTH] sesión iniciada, JWT con expiración 1795453143
+2026-11-23 11:59:03.923 Df Runner[16684:37dac] (Flutter) flutter: [API] GET nominatim.openstreetmap.org/reverse -> 200 (285 ms)
+2026-11-23 11:59:04.237 Df Runner[16684:37dac] (Flutter) flutter: [API] GET api.open-meteo.com/v1/forecast -> 200 (654 ms)
+2026-11-23 11:59:07.371 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 01_centros_ubicacion_clima_ios
+2026-11-23 11:59:09.313 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 01_centros_ubicacion_clima_ios
+2026-11-23 11:59:10.038 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 02_centros_por_cercania_ios
+2026-11-23 11:59:11.976 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 02_centros_por_cercania_ios
+2026-11-23 11:59:15.390 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 03_farmacias_turno_hoy_ios
+2026-11-23 11:59:17.331 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 03_farmacias_turno_hoy_ios
+2026-11-23 11:59:20.756 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 04_farmacias_el_alto_ios
+2026-11-23 11:59:22.661 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 04_farmacias_el_alto_ios
+2026-11-23 11:59:26.072 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 05_farmacias_manana_ios
+2026-11-23 11:59:28.017 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 05_farmacias_manana_ios
+2026-11-23 12:14:38.575 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 06_farmacia_detalle_ios
+2026-11-23 12:15:02.600 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 08_mapa_centros_farmacias_ios
+2026-11-23 12:15:04.646 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 08_mapa_centros_farmacias_ios
+2026-11-23 12:15:07.254 Df Runner[16684:37dac] (Flutter) flutter: [API] GET nominatim.openstreetmap.org/search -> 200 (1470 ms)
+2026-11-23 12:15:08.396 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 09_mapa_busqueda_resultados_ios
+2026-11-23 12:25:17.342 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 09_mapa_busqueda_resultados_ios
+2026-11-23 12:25:24.949 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 10_mapa_lugar_encontrado_ios
+2026-11-23 12:25:26.957 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 10_mapa_lugar_encontrado_ios
+2026-11-23 12:25:31.895 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 11_mapa_solo_centros_ios
+2026-11-23 12:25:33.894 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 11_mapa_solo_centros_ios
+2026-11-23 12:25:43.678 Df Runner[16684:37dac] (Flutter) flutter:   \134^[[1m[flutter_map]\134^[[0m
+2026-11-23 12:25:52.270 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 12_mapa_marcador_centro_ios
+2026-11-23 12:25:54.236 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 12_mapa_marcador_centro_ios
+2026-11-23 12:25:58.451 Df Runner[16684:37dac] (Flutter) flutter: [API] GET nominatim.openstreetmap.org/reverse -> TIMEOUT (2 ms)
+2026-11-23 12:25:59.109 Df Runner[16684:37dac] (Flutter) flutter: [API] GET api.open-meteo.com/v1/no-existe -> 404 (682 ms)
+2026-11-23 12:26:00.238 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 13_error_clima_404_ios
+2026-11-23 12:26:02.166 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 13_error_clima_404_ios
+2026-11-23 12:26:03.175 Df Runner[16684:37dac] (Flutter) flutter:   \134^[[1m[flutter_map]\134^[[0m
+2026-11-23 12:26:05.334 Df Runner[16684:37dac] (Flutter) flutter: [API] GET nominatim.openstreetmap.org/search -> TIMEOUT (40 ms)
+2026-11-23 12:26:07.672 Df Runner[16684:37dac] (Flutter) flutter: [CAPTURA] 14_error_nominatim_timeout_ios
+2026-11-23 12:26:09.672 Df Runner[16684:37dac] (Flutter) flutter: [EVIDENCIA] 14_error_nominatim_timeout_ios
+2026-11-23 12:26:11.074 Df Runner[16684:37dac] (Flutter) flutter: supabase.auth: INFO: Signing out user with scope: local
+2026-11-23 12:26:12.083 Df Runner[16684:37dac] (Flutter) flutter: 27:15 +1: (tearDownAll)
+2026-11-23 12:26:12.084 Df Runner[16684:37dac] (Flutter) flutter: 27:15 +2: All tests passed!

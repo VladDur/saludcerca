@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Date: Mon, 23 Nov 2026 14:56:20 GMT
+Content-Type: application/json; charset=utf-8
+Transfer-Encoding: chunked
+Connection: keep-alive
+X-RateLimit-Cost: 1.1
+X-RateLimit-Limit: 600.0
+X-RateLimit-Remaining: 598.9
+X-RateLimit-Reset: 1795445840
+X-RateLimit-Window: 60
+
+{"latitude":-16.55536,"longitude":-68.12201,"generationtime_ms":0.25916099548339844,"utc_offset_seconds":-14400,"timezone":"America/La_Paz","timezone_abbreviation":"GMT-4","elevation":3645.0,"current_units":{"time":"iso8601","interval":"seconds","temperature_2m":"°C","apparent_temperature":"°C","relative_humidity_2m":"%","precipitation":"mm","weather_code":"wmo code","wind_speed_10m":"km/h","is_day":""},"current":{"time":"2026-11-23T10:45","interval":900,"temperature_2m":20.2,"apparent_temperature":18.8,"relative_humidity_2m":12,"precipitation":0.00,"weather_code":3,"wind_speed_10m":9.7,"is_day":1},"daily_units":{"time":"iso8601","uv_index_max":"","temperature_2m_min":"°C","temperature_2m_max":"°C","precipitation_probability_max":"%"},"daily":{"time":["2026-11-23"],"uv_index_max":[11.10],"temperature_2m_min":[7.7],"temperature_2m_max":[22.3],"precipitation_probability_max":[18]}}

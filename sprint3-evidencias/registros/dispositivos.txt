@@ -1,0 +1,4 @@
+Android: emulador Pixel 9 (Android 17), emulator-5554
+iOS: simulador iPhone 17 (iOS 26.5), 5F9A4F7A-90BE-49F6-A778-18FEC16AAE64
+Ubicación de prueba: -16.5100, -68.1270 (Sopocachi, La Paz)
+Fecha: 2026-11-23 12:15 -0400
