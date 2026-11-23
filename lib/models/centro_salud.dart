@@ -38,8 +38,18 @@ class Ubicacion {
   final double lng;
   const Ubicacion(this.lat, this.lng);
 
-  /// Ubicación de referencia del usuario (Plaza Murillo, La Paz).
-  /// En un sprint posterior se reemplaza por el GPS del teléfono.
+  @override
+  bool operator ==(Object other) =>
+      other is Ubicacion && other.lat == lat && other.lng == lng;
+
+  @override
+  int get hashCode => Object.hash(lat, lng);
+
+  @override
+  String toString() => 'Ubicacion($lat, $lng)';
+
+  /// Ubicación de referencia (Plaza Murillo, La Paz). Se usa cuando no hay
+  /// GPS, no hay permiso o el usuario está fuera de La Paz y El Alto (HU-13).
   static const referencia = Ubicacion(-16.4958, -68.1335);
 
   /// Distancia en km con la fórmula de Haversine.
@@ -56,6 +66,18 @@ class Ubicacion {
     return radioTierra * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a));
   }
 }
+
+/// Distancia en texto legible: "650 m" o "2,4 km".
+String formatearDistancia(double km) {
+  if (km < 1) return '${(km * 1000).round()} m';
+  return '${km.toStringAsFixed(1).replaceAll('.', ',')} km';
+}
+
+/// Ordena de la más cercana a la más lejana.
+List<T> ordenarPorCercania<T>(
+        Iterable<T> lista, Ubicacion origen, Ubicacion Function(T) punto) =>
+    [...lista]..sort((a, b) =>
+        origen.distanciaKm(punto(a)).compareTo(origen.distanciaKm(punto(b))));
 
 /// Centro de salud leído desde la vista `v_centros` de Supabase.
 class CentroSalud {
@@ -119,14 +141,12 @@ class CentroSalud {
     );
   }
 
-  double get distanciaKm => Ubicacion.referencia.distanciaKm(ubicacion);
+  /// Distancia en km desde [origen] (GPS del usuario o Plaza Murillo).
+  double distanciaDesde(Ubicacion origen) => origen.distanciaKm(ubicacion);
 
   /// Distancia en texto legible: "650 m" o "2,4 km".
-  String get distanciaTexto {
-    final km = distanciaKm;
-    if (km < 1) return '${(km * 1000).round()} m';
-    return '${km.toStringAsFixed(1).replaceAll('.', ',')} km';
-  }
+  String distanciaTexto(Ubicacion origen) =>
+      formatearDistancia(distanciaDesde(origen));
 
   /// ¿Está abierto en el momento indicado (hora local del teléfono)?
   bool estaAbierto([DateTime? momento]) {

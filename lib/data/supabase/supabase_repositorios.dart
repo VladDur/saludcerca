@@ -1,6 +1,7 @@
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../../models/centro_salud.dart';
+import '../../models/farmacia.dart';
 import '../../models/favorito.dart';
 import '../../models/perfil.dart';
 import '../../models/recordatorio.dart';
@@ -79,9 +80,8 @@ class SupabaseCentrosRepositorio implements CentrosRepositorio {
     }
 
     final filas = await consulta.order('nombre');
-    final centros = filas.map(CentroSalud.desdeMapa).toList()
-      ..sort((a, b) => a.distanciaKm.compareTo(b.distanciaKm));
-    return centros;
+    // El orden por cercanía lo hace la pantalla con la ubicación actual.
+    return filas.map(CentroSalud.desdeMapa).toList();
   }
 
   @override
@@ -209,5 +209,27 @@ class SupabasePerfilRepositorio implements PerfilRepositorio {
   @override
   Future<void> actualizar(Perfil perfil) async {
     await _db.from('perfiles').update(perfil.aMapaEdicion()).eq('id', _uid());
+  }
+}
+
+/// Formato de fecha de PostgreSQL: "2026-11-23".
+String fechaIso(DateTime d) =>
+    '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-'
+    '${d.day.toString().padLeft(2, '0')}';
+
+class SupabaseFarmaciasRepositorio implements FarmaciasRepositorio {
+  @override
+  Future<List<TurnoFarmacia>> deTurno(DateTime fecha, {String? ciudad}) async {
+    // API REST de Supabase (PostgREST) con el JWT del usuario:
+    // GET /rest/v1/turnos_farmacia?select=...,farmacias!inner(...)&fecha=eq.AAAA-MM-DD
+    var consulta = _db
+        .from('turnos_farmacia')
+        .select('id, fecha, hora_inicio, hora_fin, '
+            'farmacias!inner(id, nombre, ciudad, zona, direccion, telefono, latitud, longitud)')
+        .eq('fecha', fechaIso(fecha))
+        .eq('activo', true);
+    if (ciudad != null) consulta = consulta.eq('farmacias.ciudad', ciudad);
+    final filas = await consulta;
+    return filas.map(TurnoFarmacia.desdeMapa).toList();
   }
 }

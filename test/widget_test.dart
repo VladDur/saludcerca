@@ -22,6 +22,7 @@ Future<Dependencias> abrirApp(WidgetTester tester,
 Future<void> tocar(WidgetTester tester, Finder f) async {
   await tester.pump(const Duration(seconds: 6));
   await tester.pumpAndSettle();
+  if (f.evaluate().isEmpty) await alInicio(tester);
   if (f.evaluate().isEmpty) {
     await tester.scrollUntilVisible(f, 200,
         scrollable: find
@@ -33,6 +34,33 @@ Future<void> tocar(WidgetTester tester, Finder f) async {
   await tester.pumpAndSettle();
   await tester.tap(f);
   await tester.pumpAndSettle();
+}
+
+/// Vuelve al inicio de la lista vertical de la pantalla.
+Future<void> alInicio(WidgetTester tester) async {
+  final listas = find.byWidgetPredicate(
+      (w) => w is Scrollable && w.axisDirection == AxisDirection.down);
+  for (final e in listas.evaluate()) {
+    final state = (e as StatefulElement).state as ScrollableState;
+    state.position.jumpTo(0);
+  }
+  await tester.pumpAndSettle();
+}
+
+/// Desplaza la lista vertical hasta que [f] se construya (ListView es perezosa).
+Future<Finder> visible(WidgetTester tester, Finder f) async {
+  if (f.evaluate().isEmpty) {
+    await alInicio(tester);
+  }
+  if (f.evaluate().isEmpty) {
+    await tester.scrollUntilVisible(f, 200,
+        scrollable: find
+            .byWidgetPredicate(
+                (w) => w is Scrollable && w.axisDirection == AxisDirection.down)
+            .first);
+    await tester.pumpAndSettle();
+  }
+  return f;
 }
 
 Future<void> irAPestana(WidgetTester tester, String nombre) async {
@@ -78,7 +106,7 @@ void main() {
       await tester.tap(find.text('Ingresar'));
       await tester.pumpAndSettle();
       expect(find.byType(ShellScreen), findsOneWidget);
-      expect(find.text('Centro Uno'), findsOneWidget);
+      expect(await visible(tester, find.text('Centro Uno')), findsOneWidget);
 
       await irAPestana(tester, 'Perfil');
       expect(find.text(correoPrueba), findsOneWidget); // usuario identificado
@@ -134,13 +162,15 @@ void main() {
   group('Consultas dinámicas de centros', () {
     testWidgets('filtra por ciudad y por emergencias', (tester) async {
       await abrirApp(tester, conSesion: true);
-      expect(find.text('Encontramos 3 centros'), findsOneWidget);
+      expect(await visible(tester, find.text('Encontramos 3 centros')),
+          findsOneWidget);
       await tocar(tester, find.text('El Alto'));
-      expect(find.text('Encontramos 1 centro'), findsOneWidget);
-      expect(find.text('Posta Tres'), findsOneWidget);
+      expect(await visible(tester, find.text('Encontramos 1 centro')),
+          findsOneWidget);
+      expect(await visible(tester, find.text('Posta Tres')), findsOneWidget);
       await tocar(tester, find.text('Todas las ciudades'));
       await tocar(tester, find.text('Emergencias').first);
-      expect(find.text('Hospital Dos'), findsOneWidget);
+      expect(await visible(tester, find.text('Hospital Dos')), findsOneWidget);
       expect(find.text('Centro Uno'), findsNothing);
     });
   });
@@ -247,7 +277,7 @@ void main() {
     testWidgets('texto grande se aplica en toda la app', (tester) async {
       await abrirApp(tester, conSesion: true);
       double escala() =>
-          MediaQuery.of(tester.element(find.text('Centro Uno')))
+          MediaQuery.of(tester.element(find.text('Centros de salud')))
               .textScaler
               .scale(10) /
           10;
@@ -285,7 +315,8 @@ void main() {
         'ajustes.alto_contraste': true,
         'ajustes.modo_tema': 'dark',
       });
-      final ctx = tester.element(find.text('Centro Uno'));
+      final ctx =
+          tester.element(await visible(tester, find.text('Centro Uno')));
       expect(Theme.of(ctx).brightness, Brightness.dark);
       expect(Theme.of(ctx).scaffoldBackgroundColor, Colors.black);
       expect(MediaQuery.of(ctx).textScaler.scale(10), closeTo(13, 0.01));

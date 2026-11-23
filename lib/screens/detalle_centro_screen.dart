@@ -8,6 +8,7 @@ import '../widgets/etiqueta_estado.dart';
 import '../widgets/fila_info.dart';
 import '../widgets/mensajes.dart';
 import 'favoritos_screen.dart';
+import 'mapa_screen.dart';
 import 'recordatorio_form_screen.dart';
 
 /// Detalle de un centro: datos, servicios, agregar/quitar de favoritos y
@@ -129,7 +130,8 @@ class _DetalleCentroScreenState extends State<DetalleCentroScreen> {
                         if (centro.atiendeEmergencias)
                           EtiquetaEstado.emergencias(),
                         EtiquetaEstado.info(
-                            'A ${centro.distanciaTexto}', Icons.place),
+                            'A ${centro.distanciaTexto(AppScope.de(context).ubicacion.ultimaConocida.ubicacion)}',
+                            Icons.place),
                       ],
                     ),
                   ],
@@ -184,6 +186,18 @@ class _DetalleCentroScreenState extends State<DetalleCentroScreen> {
               ),
               icon: const Icon(Icons.alarm_add),
               label: const Text('Crear recordatorio aquí'),
+            ),
+            const SizedBox(height: 12),
+            OutlinedButton.icon(
+              key: const Key('detalle_ver_mapa'),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => MapaScreen(
+                        enfocar: centro.ubicacion, seleccionId: centro.id)),
+              ),
+              icon: const Icon(Icons.map),
+              label: const Text('Ver en el mapa'),
             ),
             const SizedBox(height: 12),
             OutlinedButton.icon(

@@ -82,3 +82,43 @@ on conflict do nothing;
 select (select count(*) from public.centros_salud) as centros,
        (select count(*) from public.servicios)     as servicios,
        (select count(*) from public.centro_servicios) as relaciones;
+
+-- =====================================================================
+-- SPRINT 3 · HU-03 Farmacias de turno (datos ficticios de demostración)
+-- Coordenadas aproximadas a cada zona. Los turnos se generan desde 3 días
+-- atrás hasta 120 días adelante: vuelve a ejecutar este bloque si vencen.
+-- =====================================================================
+insert into public.farmacias (nombre, ciudad, zona, direccion, telefono, latitud, longitud) values
+  ('Farmacia San Pedro',        'La Paz',  'San Pedro',       'Calle Colombia N° 210, San Pedro',          '2-100-0001', -16.5005, -68.1360),
+  ('Farmacia Sopocachi Central','La Paz',  'Sopocachi',       'Av. 6 de Agosto N° 2050, Sopocachi',        '2-100-0002', -16.5090, -68.1255),
+  ('Farmacia Miraflores Salud', 'La Paz',  'Miraflores',      'Av. Busch N° 1500, Miraflores',             '2-100-0003', -16.4985, -68.1185),
+  ('Farmacia El Prado',         'La Paz',  'Centro',          'Av. 16 de Julio N° 1600, El Prado',         '2-100-0004', -16.5012, -68.1322),
+  ('Farmacia Obrajes',          'La Paz',  'Obrajes',         'Av. Hernando Siles N° 500, Obrajes',        '2-100-0005', -16.5230, -68.1125),
+  ('Farmacia Villa Fátima',     'La Paz',  'Villa Fátima',    'Av. Tejada Sorzano N° 300, Villa Fátima',   '2-100-0006', -16.4815, -68.1200),
+  ('Farmacia Ceja',             'El Alto', 'La Ceja',         'Av. 6 de Marzo N° 10, La Ceja',             '2-100-0007', -16.5040, -68.1640),
+  ('Farmacia Satélite',         'El Alto', 'Ciudad Satélite', 'Plaza Juana Azurduy N° 5, Ciudad Satélite', '2-100-0008', -16.5370, -68.1720),
+  ('Farmacia 16 de Julio',      'El Alto', '16 de Julio',     'Av. Alfonso Ugarte N° 120, 16 de Julio',    '2-100-0009', -16.4960, -68.1900),
+  ('Farmacia Villa Adela',      'El Alto', 'Villa Adela',     'Av. Bolivia N° 450, Villa Adela',           '2-100-0010', -16.5200, -68.2030),
+  ('Farmacia Río Seco',         'El Alto', 'Río Seco',        'Av. Juan Pablo II N° 900, Río Seco',        '2-100-0011', -16.4800, -68.2000),
+  ('Farmacia Senkata',          'El Alto', 'Senkata',         'Av. 6 de Marzo N° 4000, Senkata',           '2-100-0012', -16.5560, -68.1960)
+on conflict (nombre) do nothing;
+
+-- Rotación: cada día quedan 2 farmacias de turno en La Paz y 2 en El Alto.
+insert into public.turnos_farmacia (farmacia_id, fecha)
+select f.id, d.fecha
+from (
+  select id, ciudad, row_number() over (partition by ciudad order by nombre) - 1 as n
+  from public.farmacias
+) f
+cross join (
+  select gs::date as fecha,
+         (gs::date - date '2026-01-01') as k
+  from generate_series((now() at time zone 'America/La_Paz')::date - 3,
+                       (now() at time zone 'America/La_Paz')::date + 120,
+                       interval '1 day') as gs
+) d
+where (d.k + f.n) % 3 = 0
+on conflict (farmacia_id, fecha) do nothing;
+
+select (select count(*) from public.farmacias)       as farmacias,
+       (select count(*) from public.turnos_farmacia) as turnos;

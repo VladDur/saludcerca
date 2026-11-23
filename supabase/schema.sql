@@ -1,5 +1,5 @@
 -- =====================================================================
--- SaludCerca · Sprint 2 · Esquema de base de datos (Supabase / PostgreSQL)
+-- SaludCerca · Sprints 2 y 3 · Esquema de base de datos (Supabase / PostgreSQL)
 -- Rol único de la app: USUARIO (autenticado con Supabase Auth).
 -- Ejecutar completo en: Supabase → SQL Editor → New query → Run.
 -- El script es idempotente: se puede volver a ejecutar sin errores.
@@ -217,3 +217,56 @@ revoke delete on public.perfiles, public.favoritos, public.recordatorios from au
 grant select on public.centros_salud, public.servicios, public.centro_servicios, public.v_centros to authenticated;
 grant select, insert, update on public.perfiles, public.favoritos, public.recordatorios to authenticated;
 revoke all on public.v_centros from anon;
+
+-- =====================================================================
+-- SPRINT 3 · HU-03 Farmacias de turno
+-- Catálogos de solo lectura para el USUARIO (los cargará el panel web del
+-- ADMINISTRADOR en una etapa posterior; por ahora, seed.sql).
+-- =====================================================================
+
+-- Farmacias de La Paz y El Alto.
+create table if not exists public.farmacias (
+  id         uuid primary key default gen_random_uuid(),
+  nombre     text not null,
+  ciudad     text not null check (ciudad in ('La Paz', 'El Alto')),
+  zona       text not null,
+  direccion  text not null,
+  telefono   text not null,
+  latitud    double precision not null check (latitud between -90 and 90),
+  longitud   double precision not null check (longitud between -180 and 180),
+  activo     boolean not null default true,
+  creado_en  timestamptz not null default now(),
+  constraint uq_farmacia_nombre unique (nombre)
+);
+
+-- Turnos (1 farmacia → N turnos). Un turno empieza el día "fecha" a la
+-- hora_inicio y termina al día siguiente a la hora_fin (turno de 24 h).
+create table if not exists public.turnos_farmacia (
+  id          uuid primary key default gen_random_uuid(),
+  farmacia_id uuid not null references public.farmacias (id) on delete cascade,
+  fecha       date not null,
+  hora_inicio time not null default '08:00',
+  hora_fin    time not null default '08:00',
+  activo      boolean not null default true,
+  creado_en   timestamptz not null default now(),
+  constraint uq_turno_farmacia_fecha unique (farmacia_id, fecha)
+);
+
+create index if not exists idx_turnos_fecha on public.turnos_farmacia (fecha) where activo;
+create index if not exists idx_farmacias_ciudad on public.farmacias (ciudad) where activo;
+
+alter table public.farmacias       enable row level security;
+alter table public.turnos_farmacia enable row level security;
+
+drop policy if exists "farmacias: lectura autenticados" on public.farmacias;
+create policy "farmacias: lectura autenticados" on public.farmacias
+  for select to authenticated using (activo);
+
+drop policy if exists "turnos: lectura autenticados" on public.turnos_farmacia;
+create policy "turnos: lectura autenticados" on public.turnos_farmacia
+  for select to authenticated using (activo);
+
+-- Solo lectura: sin INSERT/UPDATE/DELETE para usuarios; nada para anon.
+revoke all on public.farmacias, public.turnos_farmacia from anon;
+revoke insert, update, delete on public.farmacias, public.turnos_farmacia from authenticated;
+grant select on public.farmacias, public.turnos_farmacia to authenticated;

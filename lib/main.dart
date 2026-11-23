@@ -5,6 +5,10 @@ import 'app.dart';
 import 'config/env.dart';
 import 'core/app_scope.dart';
 import 'data/supabase/supabase_repositorios.dart';
+import 'services/api_cliente.dart';
+import 'services/clima_servicio.dart';
+import 'services/geocodificacion_servicio.dart';
+import 'services/ubicacion_servicio.dart';
 import 'settings/ajustes_controller.dart';
 
 Future<void> main() async {
@@ -22,14 +26,23 @@ Future<void> main() async {
     publishableKey: Env.supabaseAnonKey, // anon key o publishable key
   );
 
-  runApp(SaludCercaApp(
-    dependencias: Dependencias(
-      auth: SupabaseAuthRepositorio(),
-      centros: SupabaseCentrosRepositorio(),
-      favoritos: SupabaseFavoritosRepositorio(),
-      recordatorios: SupabaseRecordatoriosRepositorio(),
-      perfil: SupabasePerfilRepositorio(),
-      ajustes: ajustes,
-    ),
-  ));
+  runApp(SaludCercaApp(dependencias: dependenciasReales(ajustes)));
+}
+
+/// Implementaciones reales: Supabase, Open-Meteo, Nominatim y GPS.
+Dependencias dependenciasReales(AjustesController ajustes,
+    {ClimaServicio? clima, GeocodificacionServicio? geocodificacion}) {
+  final api = ApiCliente();
+  return Dependencias(
+    auth: SupabaseAuthRepositorio(),
+    centros: SupabaseCentrosRepositorio(),
+    favoritos: SupabaseFavoritosRepositorio(),
+    recordatorios: SupabaseRecordatoriosRepositorio(),
+    perfil: SupabasePerfilRepositorio(),
+    farmacias: SupabaseFarmaciasRepositorio(),
+    ajustes: ajustes,
+    clima: clima ?? OpenMeteoClimaServicio(api),
+    geocodificacion: geocodificacion ?? NominatimServicio(api),
+    ubicacion: GpsUbicacionServicio(),
+  );
 }

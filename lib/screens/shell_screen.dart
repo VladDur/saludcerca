@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../data/repositorios.dart';
 import 'centros_screen.dart';
+import 'farmacias_screen.dart';
 import 'favoritos_screen.dart';
 import 'perfil_screen.dart';
 import 'recordatorios_screen.dart';
 
 /// Pantalla principal (protegida): solo se llega aquí con sesión iniciada.
-/// Barra inferior con 4 pestañas.
+/// Barra inferior con 5 pestañas (Farmacias se agregó en el Sprint 3).
 class ShellScreen extends StatefulWidget {
   final UsuarioActual usuario;
 
@@ -24,10 +25,12 @@ class _ShellScreenState extends State<ShellScreen> {
   Widget get _pestana {
     switch (_indice) {
       case 1:
-        return const FavoritosScreen();
+        return const FarmaciasScreen();
       case 2:
-        return const RecordatoriosScreen();
+        return const FavoritosScreen();
       case 3:
+        return const RecordatoriosScreen();
+      case 4:
         return PerfilScreen(usuario: widget.usuario);
       case 0:
       default:
@@ -48,6 +51,10 @@ class _ShellScreenState extends State<ShellScreen> {
               icon: Icon(Icons.local_hospital_outlined),
               selectedIcon: Icon(Icons.local_hospital),
               label: 'Centros'),
+          NavigationDestination(
+              icon: Icon(Icons.local_pharmacy_outlined),
+              selectedIcon: Icon(Icons.local_pharmacy),
+              label: 'Farmacias'),
           NavigationDestination(
               icon: Icon(Icons.favorite_border),
               selectedIcon: Icon(Icons.favorite),

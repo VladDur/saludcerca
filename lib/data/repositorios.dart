@@ -1,4 +1,5 @@
 import '../models/centro_salud.dart';
+import '../models/farmacia.dart';
 import '../models/favorito.dart';
 import '../models/perfil.dart';
 import '../models/recordatorio.dart';
@@ -84,4 +85,11 @@ abstract class RecordatoriosRepositorio {
 abstract class PerfilRepositorio {
   Future<Perfil> obtener();
   Future<void> actualizar(Perfil perfil);
+}
+
+/// HU-03: farmacias de turno (catálogo de solo lectura).
+abstract class FarmaciasRepositorio {
+  /// Turnos que empiezan en [fecha] (solo se usa el día), opcionalmente de
+  /// una ciudad.
+  Future<List<TurnoFarmacia>> deTurno(DateTime fecha, {String? ciudad});
 }

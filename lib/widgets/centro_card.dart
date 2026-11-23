@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/app_scope.dart';
 import '../models/centro_salud.dart';
 import '../theme/app_theme.dart';
 import 'etiqueta_estado.dart';
@@ -83,7 +84,11 @@ class CentroCard extends StatelessWidget {
               Column(
                 children: [
                   Icon(Icons.place, color: colores.acento),
-                  Text(centro.distanciaTexto,
+                  Text(
+                      centro.distanciaTexto(AppScope.de(context)
+                          .ubicacion
+                          .ultimaConocida
+                          .ubicacion),
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,

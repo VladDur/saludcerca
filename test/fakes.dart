@@ -3,9 +3,15 @@ import 'dart:async';
 import 'package:saludcerca/core/app_scope.dart';
 import 'package:saludcerca/data/repositorios.dart';
 import 'package:saludcerca/models/centro_salud.dart';
+import 'package:saludcerca/models/clima.dart';
+import 'package:saludcerca/models/farmacia.dart';
 import 'package:saludcerca/models/favorito.dart';
 import 'package:saludcerca/models/perfil.dart';
 import 'package:saludcerca/models/recordatorio.dart';
+import 'package:saludcerca/services/api_cliente.dart';
+import 'package:saludcerca/services/clima_servicio.dart';
+import 'package:saludcerca/services/geocodificacion_servicio.dart';
+import 'package:saludcerca/services/ubicacion_servicio.dart';
 import 'package:saludcerca/settings/ajustes_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
@@ -101,8 +107,7 @@ class FakeCentros implements CentrosRepositorio {
             (f.ciudad == null || c.ciudad == f.ciudad) &&
             (f.tipo == null || c.tipo == f.tipo) &&
             (!f.soloEmergencias || c.atiendeEmergencias))
-        .toList()
-      ..sort((a, b) => a.distanciaKm.compareTo(b.distanciaKm));
+        .toList();
   }
 
   @override
@@ -206,8 +211,14 @@ class FakePerfil implements PerfilRepositorio {
   Future<void> actualizar(Perfil p) async => perfil = p;
 }
 
-Future<Dependencias> crearDependencias(
-    {bool conSesion = false, Map<String, Object> prefs = const {}}) async {
+Future<Dependencias> crearDependencias({
+  bool conSesion = false,
+  Map<String, Object> prefs = const {},
+  FakeFarmacias? farmacias,
+  FakeClima? clima,
+  FakeGeocodificacion? geocodificacion,
+  FakeUbicacion? ubicacion,
+}) async {
   SharedPreferences.setMockInitialValues(prefs);
   final centros = FakeCentros();
   return Dependencias(
@@ -216,6 +227,121 @@ Future<Dependencias> crearDependencias(
     favoritos: FakeFavoritos(centros),
     recordatorios: FakeRecordatorios(),
     perfil: FakePerfil(),
+    farmacias: farmacias ?? FakeFarmacias(),
     ajustes: await AjustesController.cargar(),
+    clima: clima ?? FakeClima(),
+    geocodificacion: geocodificacion ?? FakeGeocodificacion(),
+    ubicacion: ubicacion ?? FakeUbicacion(),
   );
 }
+
+// ---------------- Sprint 3 ----------------
+
+/// Sopocachi, a ~1,7 km de Plaza Murillo.
+const ubicacionGpsPrueba = Ubicacion(-16.5100, -68.1270);
+
+Farmacia farmaciaPrueba(String id, String nombre,
+        {String ciudad = 'La Paz', double lat = -16.50, double lng = -68.13}) =>
+    Farmacia(
+      id: id,
+      nombre: nombre,
+      ciudad: ciudad,
+      zona: 'Zona $id',
+      direccion: 'Calle $id',
+      telefono: '2-100-000$id',
+      ubicacion: Ubicacion(lat, lng),
+    );
+
+class FakeFarmacias implements FarmaciasRepositorio {
+  Object? error;
+  DateTime? ultimaFecha;
+  final farmacias = [
+    farmaciaPrueba('f1', 'Farmacia Lejana', lat: -16.53),
+    farmaciaPrueba('f2', 'Farmacia Cercana', lat: -16.5105, lng: -68.1268),
+    farmaciaPrueba('f3', 'Farmacia Alteña',
+        ciudad: 'El Alto', lat: -16.50, lng: -68.17),
+  ];
+
+  @override
+  Future<List<TurnoFarmacia>> deTurno(DateTime fecha, {String? ciudad}) async {
+    ultimaFecha = fecha;
+    if (error != null) throw error!;
+    return [
+      for (final f in farmacias)
+        if (ciudad == null || f.ciudad == ciudad)
+          TurnoFarmacia(
+              id: 't${f.id}',
+              fecha: DateTime(fecha.year, fecha.month, fecha.day),
+              horaInicio: '08:00',
+              horaFin: '08:00',
+              farmacia: f),
+    ];
+  }
+}
+
+Clima climaPrueba({double uv = 11, double minima = 1, int lluvia = 70}) =>
+    Clima(
+      temperatura: 14,
+      sensacion: 12,
+      humedad: 50,
+      precipitacion: 0,
+      codigoTiempo: 2,
+      viento: 10,
+      esDeDia: true,
+      uvMaximo: uv,
+      minima: minima,
+      maxima: 17,
+      probabilidadLluvia: lluvia,
+      hora: DateTime(2026, 11, 23, 10),
+    );
+
+class FakeClima implements ClimaServicio {
+  Clima clima = climaPrueba(uv: 3, minima: 8, lluvia: 10); // sin avisos
+  Object? error;
+  int llamadas = 0;
+
+  @override
+  Future<Clima> actual(Ubicacion ubicacion) async {
+    llamadas++;
+    if (error != null) throw error!;
+    return clima;
+  }
+}
+
+class FakeGeocodificacion implements GeocodificacionServicio {
+  Object? error;
+  final lugares = const [
+    LugarEncontrado(
+        nombre: 'Plaza Avaroa',
+        direccionCompleta: 'Plaza Avaroa, Sopocachi, La Paz, Bolivia',
+        ubicacion: Ubicacion(-16.5098, -68.1262)),
+  ];
+
+  @override
+  Future<List<LugarEncontrado>> buscar(String texto) async {
+    if (error != null) throw error!;
+    return lugares
+        .where((l) =>
+            l.direccionCompleta.toLowerCase().contains(texto.toLowerCase()))
+        .toList();
+  }
+
+  @override
+  Future<String?> direccionDe(Ubicacion u) async =>
+      error != null ? throw error! : 'Sopocachi, La Paz';
+}
+
+class FakeUbicacion implements UbicacionServicio {
+  ResultadoUbicacion resultado =
+      const ResultadoUbicacion.gps(ubicacionGpsPrueba);
+  ResultadoUbicacion? _ultimo;
+
+  @override
+  ResultadoUbicacion get ultimaConocida => _ultimo ?? sinConsultar;
+
+  @override
+  Future<ResultadoUbicacion> obtener({bool forzar = false}) async =>
+      _ultimo = resultado;
+}
+
+const errorSinRed = ApiException(TipoErrorApi.sinConexion, 'el clima');

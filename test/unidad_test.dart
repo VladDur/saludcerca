@@ -66,7 +66,7 @@ void main() {
       expect(c.horaApertura, '08:00');
       expect(c.servicios, ['Vacunas']);
       expect(c.horarioTexto, 'Lunes a viernes, 08:00 a 16:00');
-      expect(c.distanciaTexto, '0 m');
+      expect(c.distanciaTexto(Ubicacion.referencia), '0 m');
     });
 
     test('abierto según día y hora', () {

@@ -6,10 +6,13 @@ import '../core/app_scope.dart';
 import '../core/errores.dart';
 import '../data/repositorios.dart';
 import '../models/centro_salud.dart';
-import '../theme/app_theme.dart';
+import '../services/ubicacion_servicio.dart';
 import '../widgets/centro_card.dart';
 import '../widgets/mensajes.dart';
+import '../widgets/panel_ubicacion.dart';
+import '../widgets/tarjeta_clima.dart';
 import 'detalle_centro_screen.dart';
+import 'mapa_screen.dart';
 
 /// Pestaña Centros: consulta dinámica a Supabase con búsqueda y filtros.
 class CentrosScreen extends StatefulWidget {
@@ -24,6 +27,20 @@ class _CentrosScreenState extends State<CentrosScreen> {
   bool _soloAbiertos = false;
   late Future<List<CentroSalud>> _futuro = _consultar();
   Timer? _espera;
+  ResultadoUbicacion? _ubicacion; // null mientras se consulta el GPS
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) => _cargarUbicacion());
+  }
+
+  /// HU-13: pide la ubicación del teléfono y reordena por cercanía.
+  Future<void> _cargarUbicacion({bool forzar = false}) async {
+    if (forzar) setState(() => _ubicacion = null);
+    final r = await AppScope.de(context).ubicacion.obtener(forzar: forzar);
+    if (mounted) setState(() => _ubicacion = r);
+  }
 
   @override
   void dispose() {
@@ -55,12 +72,25 @@ class _CentrosScreenState extends State<CentrosScreen> {
     await f.catchError((_) => <CentroSalud>[]);
   }
 
+  Ubicacion get _origen => _ubicacion?.ubicacion ?? Ubicacion.referencia;
+
   @override
   Widget build(BuildContext context) {
     final textos = Theme.of(context).textTheme;
 
     return Scaffold(
-      appBar: AppBar(title: const Text('SaludCerca')),
+      appBar: AppBar(
+        title: const Text('SaludCerca'),
+        actions: [
+          IconButton(
+            key: const Key('abrir_mapa'),
+            tooltip: 'Ver mapa',
+            icon: const Icon(Icons.map),
+            onPressed: () => Navigator.push(
+                context, MaterialPageRoute(builder: (_) => const MapaScreen())),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: RefreshIndicator(
           onRefresh: _refrescar,
@@ -69,17 +99,13 @@ class _CentrosScreenState extends State<CentrosScreen> {
             children: [
               Text('Centros de salud', style: textos.headlineMedium),
               const SizedBox(height: 4),
-              Row(
-                children: [
-                  Icon(Icons.my_location,
-                      size: 20, color: ColoresSalud.de(context).acento),
-                  const SizedBox(width: 6),
-                  Expanded(
-                    child: Text('Distancias desde Plaza Murillo, La Paz',
-                        style: textos.bodyMedium),
-                  ),
-                ],
+              PanelUbicacion(
+                resultado: _ubicacion,
+                onActualizar: () => _cargarUbicacion(forzar: true),
               ),
+              const SizedBox(height: 12),
+              // El clima se pide cuando ya se sabe dónde está el usuario.
+              if (_ubicacion != null) TarjetaClima(ubicacion: _origen),
               const SizedBox(height: 16),
               TextField(
                 key: const Key('buscar_centros'),
@@ -142,7 +168,8 @@ class _CentrosScreenState extends State<CentrosScreen> {
                       alPulsar: _refrescar,
                     );
                   }
-                  var centros = snap.data!;
+                  var centros = ordenarPorCercania(
+                      snap.data!, _origen, (CentroSalud c) => c.ubicacion);
                   if (_soloAbiertos) {
                     centros = centros.where((c) => c.estaAbierto()).toList();
                   }

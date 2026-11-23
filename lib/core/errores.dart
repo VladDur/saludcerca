@@ -3,8 +3,12 @@ import 'dart:io';
 
 import 'package:supabase_flutter/supabase_flutter.dart';
 
+import '../services/api_cliente.dart';
+
 /// Convierte cualquier excepción en un mensaje claro en español.
 String mensajeError(Object error) {
+  // APIs externas (Open-Meteo, Nominatim): el mensaje ya viene en español.
+  if (error is ApiException) return error.mensaje;
   if (error is AuthException) {
     // Primero los fallos de red: su texto incluye la URL
     // (".../token?grant_type=password") y no deben confundirse con la clave.
@@ -36,6 +40,13 @@ String mensajeError(Object error) {
     if (error.code == '23505') return 'Ese registro ya existe.';
     if (error.code == '42501') return 'No tienes permiso para esta acción.';
     if (error.code == '23514') return 'Algún dato no es válido.';
+    // Códigos HTTP de la API REST (PostgREST).
+    if (error.code == 'PGRST301' || error.code == '401') {
+      return 'Tu sesión expiró. Vuelve a iniciar sesión.';
+    }
+    if (error.code == '42P01' || error.code == 'PGRST205') {
+      return 'Esta función todavía no está disponible en el servidor.';
+    }
     return 'Error de la base de datos (${error.code ?? 'desconocido'}).';
   }
   if (error is SocketException ||
