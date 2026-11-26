@@ -85,7 +85,11 @@ void main() {
       expect(find.byKey(const Key('clima_error')), findsOneWidget);
       expect(find.textContaining('Sin conexión a internet'), findsOneWidget);
       // La lista de centros sigue funcionando aunque falle el clima.
+      await tester.scrollUntilVisible(find.textContaining('Encontramos'), 200,
+          scrollable: find.byType(Scrollable).first);
       expect(find.textContaining('Encontramos'), findsOneWidget);
+      await tester.drag(find.byType(Scrollable).first, const Offset(0, 3000));
+      await tester.pumpAndSettle();
       clima.error = null;
       await tocar(tester, find.byKey(const Key('clima_reintentar')));
       expect(find.text('14 °C'), findsOneWidget);

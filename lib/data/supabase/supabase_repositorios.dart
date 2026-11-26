@@ -225,7 +225,8 @@ class SupabaseFarmaciasRepositorio implements FarmaciasRepositorio {
     var consulta = _db
         .from('turnos_farmacia')
         .select('id, fecha, hora_inicio, hora_fin, '
-            'farmacias!inner(id, nombre, ciudad, zona, direccion, telefono, latitud, longitud)')
+            'farmacias!inner(id, nombre, ciudad, zona, direccion, telefono, '
+            'latitud, longitud, whatsapp)')
         .eq('fecha', fechaIso(fecha))
         .eq('activo', true);
     if (ciudad != null) consulta = consulta.eq('farmacias.ciudad', ciudad);

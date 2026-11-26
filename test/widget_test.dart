@@ -169,7 +169,7 @@ void main() {
           findsOneWidget);
       expect(await visible(tester, find.text('Posta Tres')), findsOneWidget);
       await tocar(tester, find.text('Todas las ciudades'));
-      await tocar(tester, find.text('Emergencias').first);
+      await tocar(tester, find.widgetWithText(FilterChip, 'Emergencias'));
       expect(await visible(tester, find.text('Hospital Dos')), findsOneWidget);
       expect(find.text('Centro Uno'), findsNothing);
     });
@@ -215,8 +215,11 @@ void main() {
       // CREATE con validación
       await tester.tap(find.byKey(const Key('nuevo_recordatorio')));
       await tester.pumpAndSettle();
+      await tester.ensureVisible(find.byKey(const Key('guardar_recordatorio')));
+      await tester.pumpAndSettle();
       await tester.tap(find.byKey(const Key('guardar_recordatorio')));
       await tester.pumpAndSettle();
+      await alInicio(tester);
       expect(find.text('Escribe un título'), findsOneWidget);
       expect(find.text('Elige la fecha y la hora'), findsOneWidget);
 

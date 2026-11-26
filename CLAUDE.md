@@ -206,8 +206,9 @@ flutter build apk --release --dart-define-from-file=env.json
 
 ## 13. Pendientes
 
-- Push de la rama `sprint3` a `origin` (GitHub `VladDur/saludcerca`): pendiente de la
-  aprobación explícita del usuario (`sprint2` ya se subió el 23/11/2026).
+- Las ramas `sprint2` y `sprint3` ya están en `origin` (GitHub `VladDur/saludcerca`),
+  subidas el 23/11/2026 con aprobación del usuario. Aún no hay pull request. Todo push
+  nuevo requiere aprobación explícita.
 - **Completar los datos `[COMPLETAR]` / `[CONFIRMAR]` del documento del Sprint 2**: unos 14
   datos del equipo, como las estimaciones de Planning Poker, el seguimiento y el feedback.
 - **Sprint 4:** HU‑14, HU‑15, HU‑16 a HU‑20; revisar colores (feedback del Sprint 2).

@@ -56,6 +56,14 @@ class Validadores {
     return null;
   }
 
+  static String? medicamento(String? v) {
+    final valor = v?.trim() ?? '';
+    if (valor.isEmpty) return 'Escribe el medicamento';
+    if (valor.length < 3) return 'Mínimo 3 caracteres';
+    if (valor.length > 100) return 'Máximo 100 caracteres';
+    return null;
+  }
+
   static String? Function(String?) maximo(int max) =>
       (v) => (v?.trim().length ?? 0) > max ? 'Máximo $max caracteres' : null;
 }

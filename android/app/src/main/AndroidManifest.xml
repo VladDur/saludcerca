@@ -4,6 +4,8 @@
     <!-- Sprint 3 · HU-13: ubicación para ordenar por cercanía (solo en primer plano). -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- Sprint 4: dictar recordatorios por voz (speech_to_text). -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
     <application
         android:label="saludcerca"
         android:name="${applicationName}"
@@ -45,6 +47,10 @@
         <intent>
             <action android:name="android.intent.action.PROCESS_TEXT"/>
             <data android:mimeType="text/plain"/>
+        </intent>
+        <!-- Sprint 4: en Android 11+ hace falta para encontrar el reconocedor de voz. -->
+        <intent>
+            <action android:name="android.speech.RecognitionService"/>
         </intent>
     </queries>
 </manifest>

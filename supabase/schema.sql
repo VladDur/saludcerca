@@ -239,6 +239,13 @@ create table if not exists public.farmacias (
   constraint uq_farmacia_nombre unique (nombre)
 );
 
+-- Consulta de medicamentos por WhatsApp: celular con código de país, sin "+"
+-- ni espacios (591 + 8 dígitos). Vacío = la farmacia no atiende por chat.
+-- Los números reales no se guardan en seed.sql: se asignan en el SQL Editor.
+alter table public.farmacias
+  add column if not exists whatsapp text
+  check (whatsapp ~ '^591[67][0-9]{7}$');
+
 -- Turnos (1 farmacia → N turnos). Un turno empieza el día "fecha" a la
 -- hora_inicio y termina al día siguiente a la hora_fin (turno de 24 h).
 create table if not exists public.turnos_farmacia (

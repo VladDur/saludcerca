@@ -5,7 +5,9 @@ import '../core/errores.dart';
 import '../models/centro_salud.dart';
 import '../models/farmacia.dart';
 import '../services/ubicacion_servicio.dart';
+import '../services/whatsapp_servicio.dart';
 import '../theme/app_theme.dart';
+import '../widgets/consulta_medicamento.dart';
 import '../widgets/etiqueta_estado.dart';
 import '../widgets/fila_info.dart';
 import '../widgets/mensajes.dart';
@@ -298,6 +300,15 @@ Future<void> mostrarDetalleFarmacia(BuildContext context, TurnoFarmacia t,
                   valor: t.horarioTexto(ahora)),
               FilaInfo(
                   icono: Icons.phone, titulo: 'Teléfono', valor: f.telefono),
+              if (f.whatsapp != null) ...[
+                const SizedBox(height: 12),
+                FilledButton.icon(
+                  key: const Key('farmacia_consultar'),
+                  onPressed: () => _consultarMedicamento(context, ctx, f),
+                  icon: const Icon(Icons.chat),
+                  label: const Text('Consultar'),
+                ),
+              ],
               if (conMapa) ...[
                 const SizedBox(height: 12),
                 FilledButton.icon(
@@ -323,4 +334,20 @@ Future<void> mostrarDetalleFarmacia(BuildContext context, TurnoFarmacia t,
       );
     },
   );
+}
+
+/// Pide el medicamento y abre WhatsApp con el mensaje para la farmacia.
+Future<void> _consultarMedicamento(
+    BuildContext pantalla, BuildContext hoja, Farmacia f) async {
+  final whatsapp = AppScope.de(hoja).whatsapp;
+  final medicamento = await pedirMedicamento(hoja);
+  if (medicamento == null) return;
+  final abierto = await whatsapp.abrirChat(
+      f.whatsapp!, mensajeCompra(f.nombre, medicamento));
+  if (abierto || !hoja.mounted) return;
+  Navigator.pop(hoja); // la hoja taparía el mensaje de error
+  if (pantalla.mounted) {
+    Mensajes.error(pantalla,
+        'No pudimos abrir WhatsApp. Llama al ${f.telefono}.');
+  }
 }

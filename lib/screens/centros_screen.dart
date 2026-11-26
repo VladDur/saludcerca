@@ -10,6 +10,7 @@ import '../services/ubicacion_servicio.dart';
 import '../widgets/centro_card.dart';
 import '../widgets/mensajes.dart';
 import '../widgets/panel_ubicacion.dart';
+import '../widgets/tarjeta_calidad_aire.dart';
 import '../widgets/tarjeta_clima.dart';
 import 'detalle_centro_screen.dart';
 import 'mapa_screen.dart';
@@ -106,6 +107,11 @@ class _CentrosScreenState extends State<CentrosScreen> {
               const SizedBox(height: 12),
               // El clima se pide cuando ya se sabe dónde está el usuario.
               if (_ubicacion != null) TarjetaClima(ubicacion: _origen),
+              // HU-15: calidad del aire y consejos de salud preventiva.
+              if (_ubicacion != null) ...[
+                const SizedBox(height: 12),
+                TarjetaCalidadAire(ubicacion: _origen),
+              ],
               const SizedBox(height: 16),
               TextField(
                 key: const Key('buscar_centros'),

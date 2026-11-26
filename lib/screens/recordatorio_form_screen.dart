@@ -5,6 +5,7 @@ import '../core/validadores.dart';
 import '../data/repositorios.dart';
 import '../models/centro_salud.dart';
 import '../models/recordatorio.dart';
+import '../services/voz_servicio.dart';
 import '../widgets/mensajes.dart';
 import 'recordatorios_screen.dart';
 
@@ -32,6 +33,12 @@ class _RecordatorioFormScreenState extends State<RecordatorioFormScreen> {
   List<CentroSalud> _centros = [];
   bool _guardando = false;
   bool _intentoGuardar = false;
+  final _tituloFoco = FocusNode();
+
+  // Dictado por voz del título.
+  bool _escuchando = false;
+  String _parcial = '';
+  VozServicio? _voz;
 
   bool get _esEdicion => widget.existente != null;
 
@@ -43,8 +50,10 @@ class _RecordatorioFormScreenState extends State<RecordatorioFormScreen> {
 
   @override
   void dispose() {
+    if (_escuchando) _voz?.detener();
     _tituloCtrl.dispose();
     _descripcionCtrl.dispose();
+    _tituloFoco.dispose();
     super.dispose();
   }
 
@@ -55,6 +64,41 @@ class _RecordatorioFormScreenState extends State<RecordatorioFormScreen> {
       if (mounted) setState(() => _centros = lista);
     } catch (_) {
       // El centro es opcional: si falla la carga, el formulario sigue útil.
+    }
+  }
+
+  /// Escucha al usuario y pone lo que dijo en el título. El usuario revisa
+  /// el texto y lo corrige con el teclado antes de guardar.
+  Future<void> _dictar() async {
+    final voz = _voz = AppScope.de(context).voz;
+    if (_escuchando) {
+      await voz.detener();
+      return;
+    }
+    FocusScope.of(context).unfocus();
+    setState(() {
+      _escuchando = true;
+      _parcial = '';
+    });
+    try {
+      final texto = await voz.dictar(
+          alParcial: (p) => mounted ? setState(() => _parcial = p) : null);
+      if (!mounted) return;
+      final titulo = textoDictadoComoTitulo(texto);
+      _tituloCtrl.value = TextEditingValue(
+          text: titulo,
+          selection: TextSelection.collapsed(offset: titulo.length));
+      setState(() => _escuchando = false);
+      _tituloFoco.requestFocus();
+      Mensajes.exito(context, 'Revisa el título y corrígelo si hace falta.');
+    } on VozException catch (e) {
+      if (!mounted) return;
+      setState(() => _escuchando = false);
+      Mensajes.error(context, e.mensaje);
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _escuchando = false);
+      Mensajes.error(context, const VozException(TipoErrorVoz.otro).mensaje);
     }
   }
 
@@ -158,6 +202,7 @@ class _RecordatorioFormScreenState extends State<RecordatorioFormScreen> {
               TextFormField(
                 key: const Key('recordatorio_titulo'),
                 controller: _tituloCtrl,
+                focusNode: _tituloFoco,
                 maxLength: 60,
                 textCapitalization: TextCapitalization.sentences,
                 style: const TextStyle(fontSize: 18),
@@ -167,7 +212,12 @@ class _RecordatorioFormScreenState extends State<RecordatorioFormScreen> {
                 ),
                 validator: Validadores.titulo,
               ),
-              const SizedBox(height: 8),
+              _BotonDictar(
+                escuchando: _escuchando,
+                parcial: _parcial,
+                onPressed: _guardando ? null : _dictar,
+              ),
+              const SizedBox(height: 16),
               TextFormField(
                 controller: _descripcionCtrl,
                 maxLength: 250,
@@ -240,6 +290,58 @@ class _RecordatorioFormScreenState extends State<RecordatorioFormScreen> {
           ),
         ),
       ),
+    );
+  }
+}
+
+/// Botón grande para dictar el título con la voz (mínimo 48 dp / 44 pt).
+/// Mientras escucha muestra "Escuchando…" y lo que va reconociendo.
+class _BotonDictar extends StatelessWidget {
+  final bool escuchando;
+  final String parcial;
+  final VoidCallback? onPressed;
+
+  const _BotonDictar(
+      {required this.escuchando, required this.parcial, this.onPressed});
+
+  @override
+  Widget build(BuildContext context) {
+    final esquema = Theme.of(context).colorScheme;
+    final textos = Theme.of(context).textTheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Semantics(
+          liveRegion: escuchando,
+          child: OutlinedButton.icon(
+            key: const Key('recordatorio_dictar'),
+            style: OutlinedButton.styleFrom(
+              minimumSize: const Size.fromHeight(52),
+              foregroundColor: escuchando ? esquema.error : null,
+              side: BorderSide(
+                  color: escuchando ? esquema.error : esquema.outline,
+                  width: escuchando ? 2 : 1),
+            ),
+            onPressed: onPressed,
+            icon: Icon(escuchando ? Icons.stop_circle : Icons.mic, size: 28),
+            label: Text(escuchando
+                ? 'Escuchando… toca para terminar'
+                : 'Dictar el título con la voz'),
+          ),
+        ),
+        if (escuchando)
+          Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: Text(
+              parcial.isEmpty
+                  ? 'Habla ahora. Ej.: «sacar ficha en el hospital Miraflores»'
+                  : '«$parcial»',
+              key: const Key('recordatorio_dictado_parcial'),
+              style: textos.bodyLarge?.copyWith(
+                  fontStyle: parcial.isEmpty ? FontStyle.italic : null),
+            ),
+          ),
+      ],
     );
   }
 }

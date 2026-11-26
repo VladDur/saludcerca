@@ -1,9 +1,12 @@
 import 'package:flutter/widgets.dart';
 
 import '../data/repositorios.dart';
+import '../services/calidad_aire_servicio.dart';
 import '../services/clima_servicio.dart';
 import '../services/geocodificacion_servicio.dart';
 import '../services/ubicacion_servicio.dart';
+import '../services/voz_servicio.dart';
+import '../services/whatsapp_servicio.dart';
 import '../settings/ajustes_controller.dart';
 
 /// Dependencias de la app (repositorios y ajustes) disponibles para
@@ -22,6 +25,13 @@ class Dependencias {
   final GeocodificacionServicio geocodificacion;
   final UbicacionServicio ubicacion;
 
+  // Sprint 4: calidad del aire (HU-15) y dictado por voz (HU-10).
+  final CalidadAireServicio calidadAire;
+  final VozServicio voz;
+
+  // Consulta de medicamentos a la farmacia por WhatsApp.
+  final WhatsAppServicio whatsapp;
+
   const Dependencias({
     required this.auth,
     required this.centros,
@@ -33,6 +43,9 @@ class Dependencias {
     required this.clima,
     required this.geocodificacion,
     required this.ubicacion,
+    required this.calidadAire,
+    required this.voz,
+    required this.whatsapp,
   });
 }
 

@@ -1,0 +1,154 @@
+Resolving dependencies...
+Downloading packages...
+  code_assets 1.2.1 (2.2.0 available)
+  cupertino_icons 1.0.9 (2.0.0 available)
+  dbus 0.7.15 (0.8.1 available)
+  flutter_lints 4.0.0 (6.0.0 available)
+  gsettings 0.2.8 (0.2.9 available)
+  hooks 2.0.2 (2.2.0 available)
+  jni 1.1.2 (1.2.1 available)
+  jni_flutter 1.0.4+1 (1.1.0 available)
+  lints 4.0.0 (6.1.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  objective_c 9.5.0 (9.6.4 available)
+  petitparser 7.0.2 (7.1.0 available)
+  record_use 0.6.0 (1.1.1 available)
+  shared_preferences_foundation 2.5.7 (2.6.2 available)
+  test_api 0.7.12 (0.7.15 available)
+  url_launcher_android 6.3.33 (6.3.35 available)
+  vector_math 2.4.0 (2.4.4 available)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+19 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleDebug'...                          
+WARNING: A restricted method in java.lang.System has been called
+WARNING: java.lang.System::load has been called by net.rubygrapefruit.platform.internal.NativeLibraryLoader in an unnamed module (file:/Users/vladimirduranclaros/.gradle/wrapper/dists/gradle-9.3.1-all/9ot9r568e8zfvvd4mn8rbu1j0/gradle-9.3.1/lib/native-platform-0.22-milestone-29.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+Running Gradle task 'assembleDebug'...                             21.6s
+✓ Built build/app/outputs/flutter-apk/app-debug.apk
+Installing build/app/outputs/flutter-apk/app-debug.apk...          643ms
+D/FlutterGeolocator(29522): Creating service.
+D/FlutterGeolocator(29522): Binding to location service.
+I/Choreographer(29522): Skipped 48 frames!  The application may be doing too much work on its main thread.
+D/FlutterGeolocator(29522): Geolocator foreground service connected
+D/FlutterGeolocator(29522): Initializing Geolocator services
+D/FlutterGeolocator(29522): Flutter engine connected. Connected engine count 1
+D/WindowLayoutComponentImpl(29522): Register WindowLayoutInfoListener on Context=com.example.saludcerca.MainActivity@f1f8aef, of which baseContext=android.app.ContextImpl@2687801
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+VMServiceFlutterDriver: Connecting to Flutter application at http://127.0.0.1:49952/hEhnNxSe4Lc=/
+VMServiceFlutterDriver: Isolate found with number: 900809044817767
+VMServiceFlutterDriver: Isolate 900809044817767 is runnable.
+VMServiceFlutterDriver: Isolate is paused at start.
+VMServiceFlutterDriver: Attempting to resume isolate
+I/flutter (29522): 00:00 +0: Sprint 4 end-to-end: calidad del aire y dictado
+VMServiceFlutterDriver: Connected to Flutter application.
+I/flutter (29522): supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+D/DesktopExperienceFlags(29522): Toggle override initialized to: false
+D/InsetsController(29522): hide(ime())
+I/ImeTracker(29522): com.example.saludcerca:fee1ad7a: onCancelled at PHASE_CLIENT_ALREADY_HIDDEN
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/ProfileInstaller(29522): Installing profile for com.example.saludcerca
+I/ImeTracker(29522): com.example.saludcerca:3584206a: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+I/HWUI    (29522): Using FreeType backend (prop=Auto)
+D/InsetsController(29522): show(ime())
+D/InsetsController(29522): Setting requestedVisibleTypes to 511 (was 503)
+VMServiceFlutterDriver: request_data message is taking a long time to complete...
+I/ImeTracker(29522): com.example.saludcerca:91c5f821: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(29522): show(ime())
+I/ImeTracker(29522): com.example.saludcerca:91c5f821: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+D/InputConnectionAdaptor(29522): The input method toggled cursor monitoring on
+I/AssistStructure(29522): Flattened final assist data: 636 bytes, containing 1 windows, 4 views
+I/ImeTracker(29522): com.example.saludcerca:26cb604b: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(29522): show(ime())
+I/ImeTracker(29522): com.example.saludcerca:26cb604b: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+I/ImeTracker(29522): com.example.saludcerca:491da109: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(29522): show(ime())
+I/ImeTracker(29522): com.example.saludcerca:491da109: onCancelled at PHASE_CLIENT_REPORT_REQUESTED_VISIBLE_TYPES
+W/RemoteInputConnectionImpl(29522): getSurroundingText on inactive InputConnection
+I/AssistStructure(29522): Flattened final assist data: 656 bytes, containing 1 windows, 4 views
+D/WindowOnBackDispatcher(29522): setTopOnBackInvokedCallback (unwrapped): android.view.ImeBackAnimationController@987068e
+D/InputConnectionAdaptor(29522): The input method toggled cursor monitoring on
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+W/InteractionJankMonitor(29522): Initializing without READ_DEVICE_CONFIG permission. enabled=false, interval=1, missedFrameThreshold=3, frameTimeThreshold=64, package=com.example.saludcerca
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+I/ImeTracker(29522): com.example.saludcerca:3584206a: onShown
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+I/ImeTracker(29522): com.example.saludcerca:86ac1504: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(29522): hide(ime())
+D/WindowOnBackDispatcher(29522): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@d4b7222
+D/InsetsController(29522): Setting requestedVisibleTypes to 503 (was 511)
+D/CompatChangeReporter(29522): Compat change id reported: 395521150; UID 10236; state: ENABLED
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+I/ImeTracker(29522): system_server:b23b640d: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+I/ImeTracker(29522): system_server:9a69a201: onCancelled at PHASE_CLIENT_ON_CONTROLS_CHANGED
+I/flutter (29522): [API] GET api.open-meteo.com/v1/forecast -> 200 (878 ms)
+I/flutter (29522): [API] GET nominatim.openstreetmap.org/reverse -> 200 (1091 ms)
+I/flutter (29522): [API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (1424 ms)
+I/flutter (29522): [CAPTURA] 01_calidad_aire_consejos_android
+I/Surface (29522): Creating surface for consumer unnamed-29522-2 with slotExpansion=1 for 64 slots
+I/Surface (29522): Creating surface for consumer ImageReader-1080x2424f1m3-29522-0 with slotExpansion=1 for 64 slots
+I/flutter (29522): [EVIDENCIA] 01_calidad_aire_consejos_android
+D/WindowOnBackDispatcher(29522): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@64f8f79
+I/flutter (29522): [CAPTURA] 02_recordatorio_boton_dictar_android
+I/flutter (29522): [EVIDENCIA] 02_recordatorio_boton_dictar_android
+I/flutter (29522): [CAPTURA] 03_recordatorio_escuchando_android
+I/flutter (29522): [EVIDENCIA] 03_recordatorio_escuchando_android
+I/ImeTracker(29522): com.example.saludcerca:f0213743: onRequestShow at ORIGIN_CLIENT reason SHOW_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(29522): show(ime())
+D/InsetsController(29522): Setting requestedVisibleTypes to 511 (was 503)
+D/WindowOnBackDispatcher(29522): setTopOnBackInvokedCallback (unwrapped): android.view.ImeBackAnimationController@987068e
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+I/ImeTracker(29522): com.example.saludcerca:f0213743: onShown
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+I/flutter (29522): [CAPTURA] 04_recordatorio_titulo_dictado_android
+I/flutter (29522): [EVIDENCIA] 04_recordatorio_titulo_dictado_android
+I/ImeTracker(29522): com.example.saludcerca:871f3a7d: onRequestHide at ORIGIN_CLIENT reason HIDE_SOFT_INPUT fromUser false userId 0 displayId 0
+D/InsetsController(29522): hide(ime())
+D/WindowOnBackDispatcher(29522): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@64f8f79
+D/InsetsController(29522): Setting requestedVisibleTypes to 503 (was 511)
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/FlutterJNI(29522): Sending viewport metrics to the engine.
+D/WindowOnBackDispatcher(29522): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@d4b7222
+I/flutter (29522): [CAPTURA] 05_recordatorio_guardado_android
+I/flutter (29522): [EVIDENCIA] 05_recordatorio_guardado_android
+D/WindowOnBackDispatcher(29522): setTopOnBackInvokedCallback (unwrapped): io.flutter.embedding.android.FlutterActivity$1@64f8f79
+D/WindowOnBackDispatcher(29522): setTopOnBackInvokedCallback (unwrapped): android.app.Activity$$ExternalSyntheticLambda0@d4b7222
+I/flutter (29522): [API] GET nominatim.openstreetmap.org/reverse -> 200 (1488 ms)
+I/flutter (29522): [API] GET air-quality-api.open-meteo.com/v1/no-existe -> 404 (1764 ms)
+I/flutter (29522): [API] GET api.open-meteo.com/v1/forecast -> 200 (2483 ms)
+I/flutter (29522): [CAPTURA] 06_error_aire_404_android
+I/flutter (29522): [EVIDENCIA] 06_error_aire_404_android
+I/flutter (29522): [API] GET air-quality-api.open-meteo.com/v1/air-quality -> TIMEOUT (58 ms)
+I/flutter (29522): [API] GET nominatim.openstreetmap.org/reverse -> 200 (368 ms)
+I/flutter (29522): [API] GET api.open-meteo.com/v1/forecast -> 200 (803 ms)
+I/flutter (29522): [CAPTURA] 07_error_aire_timeout_android
+I/flutter (29522): [EVIDENCIA] 07_error_aire_timeout_android
+I/flutter (29522): supabase.auth: INFO: Signing out user with scope: local 
+E/ConsumerBase(29522): [ImageReader-1080x2424f1m3-29522-0] abandonLocked: ConsumerBase is abandoned!
+I/flutter (29522): 01:42 +1: (tearDownAll)
+I/flutter (29522): 01:42 +2: All tests passed!
+All tests passed.

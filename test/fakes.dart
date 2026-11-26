@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:saludcerca/core/app_scope.dart';
 import 'package:saludcerca/data/repositorios.dart';
+import 'package:saludcerca/models/calidad_aire.dart';
 import 'package:saludcerca/models/centro_salud.dart';
 import 'package:saludcerca/models/clima.dart';
 import 'package:saludcerca/models/farmacia.dart';
@@ -9,9 +10,12 @@ import 'package:saludcerca/models/favorito.dart';
 import 'package:saludcerca/models/perfil.dart';
 import 'package:saludcerca/models/recordatorio.dart';
 import 'package:saludcerca/services/api_cliente.dart';
+import 'package:saludcerca/services/calidad_aire_servicio.dart';
 import 'package:saludcerca/services/clima_servicio.dart';
 import 'package:saludcerca/services/geocodificacion_servicio.dart';
 import 'package:saludcerca/services/ubicacion_servicio.dart';
+import 'package:saludcerca/services/voz_servicio.dart';
+import 'package:saludcerca/services/whatsapp_servicio.dart';
 import 'package:saludcerca/settings/ajustes_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' show AuthException;
@@ -218,6 +222,9 @@ Future<Dependencias> crearDependencias({
   FakeClima? clima,
   FakeGeocodificacion? geocodificacion,
   FakeUbicacion? ubicacion,
+  FakeCalidadAire? calidadAire,
+  FakeVoz? voz,
+  FakeWhatsApp? whatsapp,
 }) async {
   SharedPreferences.setMockInitialValues(prefs);
   final centros = FakeCentros();
@@ -232,6 +239,9 @@ Future<Dependencias> crearDependencias({
     clima: clima ?? FakeClima(),
     geocodificacion: geocodificacion ?? FakeGeocodificacion(),
     ubicacion: ubicacion ?? FakeUbicacion(),
+    calidadAire: calidadAire ?? FakeCalidadAire(),
+    voz: voz ?? FakeVoz(),
+    whatsapp: whatsapp ?? FakeWhatsApp(),
   );
 }
 
@@ -241,7 +251,10 @@ Future<Dependencias> crearDependencias({
 const ubicacionGpsPrueba = Ubicacion(-16.5100, -68.1270);
 
 Farmacia farmaciaPrueba(String id, String nombre,
-        {String ciudad = 'La Paz', double lat = -16.50, double lng = -68.13}) =>
+        {String ciudad = 'La Paz',
+        double lat = -16.50,
+        double lng = -68.13,
+        String? whatsapp}) =>
     Farmacia(
       id: id,
       nombre: nombre,
@@ -250,6 +263,7 @@ Farmacia farmaciaPrueba(String id, String nombre,
       direccion: 'Calle $id',
       telefono: '2-100-000$id',
       ubicacion: Ubicacion(lat, lng),
+      whatsapp: whatsapp,
     );
 
 class FakeFarmacias implements FarmaciasRepositorio {
@@ -345,3 +359,80 @@ class FakeUbicacion implements UbicacionServicio {
 }
 
 const errorSinRed = ApiException(TipoErrorApi.sinConexion, 'el clima');
+
+// ---------------- Sprint 4 ----------------
+
+CalidadAire airePrueba({int indice = 18, double pm25 = 1.6, double? uv = 2}) =>
+    CalidadAire(
+      pm25: pm25,
+      pm10: 1.7,
+      indice: indice,
+      uv: uv,
+      hora: DateTime(2026, 11, 26, 11),
+    );
+
+class FakeCalidadAire implements CalidadAireServicio {
+  CalidadAire aire = airePrueba();
+  Object? error;
+  int llamadas = 0;
+
+  @override
+  Future<CalidadAire> actual(Ubicacion ubicacion) async {
+    llamadas++;
+    if (error != null) throw error!;
+    return aire;
+  }
+}
+
+/// Dictado falso: devuelve [texto] (pasando antes por [parciales]) o lanza
+/// [error]. Con [manual] en true espera a que la prueba llame a [terminar].
+class FakeVoz implements VozServicio {
+  String texto = 'sacar ficha en hospital Miraflores';
+  List<String> parciales = const ['sacar ficha'];
+  Object? error;
+  bool manual = false;
+  int llamadas = 0;
+  bool detenido = false;
+  Completer<String>? _pendiente;
+
+  @override
+  Future<String> dictar({void Function(String parcial)? alParcial}) async {
+    llamadas++;
+    detenido = false;
+    for (final p in parciales) {
+      alParcial?.call(p);
+    }
+    if (manual) {
+      _pendiente = Completer<String>();
+      return _pendiente!.future;
+    }
+    if (error != null) throw error!;
+    return texto;
+  }
+
+  void terminar() {
+    final p = _pendiente;
+    if (p == null || p.isCompleted) return;
+    error != null ? p.completeError(error!) : p.complete(texto);
+  }
+
+  @override
+  Future<void> detener() async {
+    detenido = true;
+    terminar();
+  }
+}
+
+/// WhatsApp falso: guarda lo que se intentó enviar.
+class FakeWhatsApp implements WhatsAppServicio {
+  bool disponible = true;
+  String? numero;
+  String? mensaje;
+
+  @override
+  Future<bool> abrirChat(String numero, String mensaje) async {
+    this.numero = numero;
+    this.mensaje = mensaje;
+    return disponible;
+  }
+}

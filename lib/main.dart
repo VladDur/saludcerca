@@ -6,9 +6,12 @@ import 'config/env.dart';
 import 'core/app_scope.dart';
 import 'data/supabase/supabase_repositorios.dart';
 import 'services/api_cliente.dart';
+import 'services/calidad_aire_servicio.dart';
 import 'services/clima_servicio.dart';
 import 'services/geocodificacion_servicio.dart';
 import 'services/ubicacion_servicio.dart';
+import 'services/voz_servicio.dart';
+import 'services/whatsapp_servicio.dart';
 import 'settings/ajustes_controller.dart';
 
 Future<void> main() async {
@@ -29,9 +32,14 @@ Future<void> main() async {
   runApp(SaludCercaApp(dependencias: dependenciasReales(ajustes)));
 }
 
-/// Implementaciones reales: Supabase, Open-Meteo, Nominatim y GPS.
+/// Implementaciones reales: Supabase, Open-Meteo (clima y calidad del aire),
+/// Nominatim, GPS, reconocimiento de voz del sistema y WhatsApp.
 Dependencias dependenciasReales(AjustesController ajustes,
-    {ClimaServicio? clima, GeocodificacionServicio? geocodificacion}) {
+    {ClimaServicio? clima,
+    GeocodificacionServicio? geocodificacion,
+    CalidadAireServicio? calidadAire,
+    VozServicio? voz,
+    WhatsAppServicio? whatsapp}) {
   final api = ApiCliente();
   return Dependencias(
     auth: SupabaseAuthRepositorio(),
@@ -44,5 +52,8 @@ Dependencias dependenciasReales(AjustesController ajustes,
     clima: clima ?? OpenMeteoClimaServicio(api),
     geocodificacion: geocodificacion ?? NominatimServicio(api),
     ubicacion: GpsUbicacionServicio(),
+    calidadAire: calidadAire ?? OpenMeteoCalidadAireServicio(api),
+    voz: voz ?? SttVozServicio(),
+    whatsapp: whatsapp ?? UrlWhatsAppServicio(),
   );
 }

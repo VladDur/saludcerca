@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>SaludCerca usa el micrófono para que puedas dictar tus recordatorios con la voz.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>SaludCerca convierte tu voz en texto para escribir el título de tus recordatorios.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>SaludCerca usa tu ubicación para mostrarte los centros de salud y las farmacias de turno más cercanos.</string>
 	<key>CADisableMinimumFrameDurationOnPhone</key>

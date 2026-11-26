@@ -10,6 +10,9 @@ class Farmacia {
   final String telefono;
   final Ubicacion ubicacion;
 
+  /// Celular con código de país (59170000000); null si no atiende por chat.
+  final String? whatsapp;
+
   const Farmacia({
     required this.id,
     required this.nombre,
@@ -18,6 +21,7 @@ class Farmacia {
     required this.direccion,
     required this.telefono,
     required this.ubicacion,
+    this.whatsapp,
   });
 
   factory Farmacia.desdeMapa(Map<String, dynamic> m) => Farmacia(
@@ -29,6 +33,7 @@ class Farmacia {
         telefono: m['telefono'] as String,
         ubicacion: Ubicacion((m['latitud'] as num).toDouble(),
             (m['longitud'] as num).toDouble()),
+        whatsapp: m['whatsapp'] as String?,
       );
 }
 

@@ -1,0 +1,181 @@
+00:00 +0: loading /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart
+00:00 +0: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Validadores de formularios correo
+00:00 +1: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Validadores de formularios contraseña nueva exige 6 caracteres con letras y números
+00:00 +2: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Validadores de formularios confirmar contraseña
+00:00 +3: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Validadores de formularios teléfono opcional
+00:00 +4: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Validadores de formularios título de recordatorio
+00:00 +5: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Modelo CentroSalud (datos desde Supabase) se convierte desde la fila de la vista v_centros
+00:00 +6: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Modelo CentroSalud (datos desde Supabase) abierto según día y hora
+00:00 +7: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Modelo CentroSalud (datos desde Supabase) distancia Haversine aproximada
+00:00 +8: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Recordatorio se serializa en UTC para la base de datos
+00:00 +9: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/unidad_test.dart: Ajustes persistentes (HU-05 y modo oscuro HU-06) valores por defecto
+00:00 +10: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +11: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +12: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +13: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +14: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +15: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +16: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +17: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +18: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +19: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +20: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +21: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +21: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) 200: convierte la respuesta real y envía GET con User-Agent
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (6 ms)
+00:00 +22: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +22: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) usa caché: no repite la consulta para el mismo lugar
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (0 ms)
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (0 ms)
+00:00 +23: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +23: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) HTTP 429 simulado -> TipoErrorApi.limiteSolicitudes con mensaje claro
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 429 (0 ms)
+00:00 +24: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +24: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) HTTP 500 simulado -> TipoErrorApi.servidor con mensaje claro
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 500 (0 ms)
+00:00 +25: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +25: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) HTTP 503 simulado -> TipoErrorApi.servidor con mensaje claro
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 503 (0 ms)
+00:00 +26: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +26: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) HTTP 400 simulado -> TipoErrorApi.respuestaHttp con mensaje claro
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 400 (0 ms)
+00:00 +27: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +27: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) sin internet (SocketException) -> sinConexion
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> SIN RED (1 ms)
+00:00 +28: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +28: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) respuesta lenta -> tiempoAgotado
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> TIMEOUT (52 ms)
+00:00 +29: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +29: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) JSON mal formado -> formatoInvalido
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (0 ms)
+00:00 +30: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +30: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) JSON sin us_aqi -> formatoInvalido (no se guarda en caché)
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (0 ms)
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (0 ms)
+00:00 +31: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +31: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_test.dart: Servicio de calidad del aire (Open-Meteo Air Quality) después de un error, un nuevo intento puede funcionar
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 503 (0 ms)
+[API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (0 ms)
+00:00 +32: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +33: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +34: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +35: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +36: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +37: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +38: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +39: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +40: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +41: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +42: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:00 +43: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:01 +44: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-13 ubicación y clima en Centros con GPS muestra la dirección (Nominatim) y el clima
+00:01 +45: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +46: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +47: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +47: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP 200 con JSON válido devuelve los datos y envía User-Agent
+[API] GET api.ejemplo.com/datos -> 200 (6 ms)
+00:01 +48: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +49: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +49: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 404 -> TipoErrorApi.noEncontrado
+[API] GET api.ejemplo.com/datos -> 404 (0 ms)
+00:01 +50: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +50: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 429 -> TipoErrorApi.limiteSolicitudes
+[API] GET api.ejemplo.com/datos -> 429 (0 ms)
+00:01 +51: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +51: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 500 -> TipoErrorApi.servidor
+[API] GET api.ejemplo.com/datos -> 500 (0 ms)
+00:01 +52: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +52: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 503 -> TipoErrorApi.servidor
+[API] GET api.ejemplo.com/datos -> 503 (0 ms)
+00:01 +53: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +53: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 400 -> TipoErrorApi.respuestaHttp
+[API] GET api.ejemplo.com/datos -> 400 (0 ms)
+00:01 +54: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +54: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP HTTP 403 -> TipoErrorApi.respuestaHttp
+[API] GET api.ejemplo.com/datos -> 403 (1 ms)
+00:01 +55: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +55: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP JSON mal formado -> formatoInvalido
+[API] GET api.ejemplo.com/datos -> 200 (1 ms)
+00:01 +56: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +56: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP sin conexión -> sinConexion
+[API] GET api.ejemplo.com/datos -> SIN RED (0 ms)
+00:01 +57: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +57: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: ApiCliente: HTTPS, timeout y códigos HTTP respuesta lenta -> tiempoAgotado
+[API] GET api.ejemplo.com/datos -> TIMEOUT (52 ms)
+00:01 +58: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +59: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +59: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Open-Meteo (clima) convierte la respuesta real y genera avisos de salud
+[API] GET api.open-meteo.com/v1/forecast -> 200 (2 ms)
+00:01 +60: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +60: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Open-Meteo (clima) usa caché: no repite la consulta en 15 minutos
+[API] GET api.open-meteo.com/v1/forecast -> 200 (0 ms)
+00:01 +61: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +61: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Open-Meteo (clima) JSON con campos faltantes -> formatoInvalido
+[API] GET api.open-meteo.com/v1/forecast -> 200 (0 ms)
+00:01 +62: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +63: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +64: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +64: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Nominatim (geocodificación) convierte resultados de búsqueda (lat/lon llegan como texto)
+[API] GET nominatim.openstreetmap.org/search -> 200 (0 ms)
+00:01 +65: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +65: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Nominatim (geocodificación) dirección inversa legible
+[API] GET nominatim.openstreetmap.org/reverse -> 200 (0 ms)
+00:01 +66: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +66: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Nominatim (geocodificación) "Unable to geocode" devuelve null sin error
+[API] GET nominatim.openstreetmap.org/reverse -> 200 (0 ms)
+00:01 +67: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +68: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +68: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/apis_test.dart: Nominatim (geocodificación) resultado con lat no numérica -> formatoInvalido
+[API] GET nominatim.openstreetmap.org/search -> 200 (0 ms)
+00:01 +69: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +70: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar no aparece si la farmacia no tiene WhatsApp
+00:01 +71: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +72: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +73: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +74: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +75: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +76: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +77: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +78: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:01 +79: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:02 +80: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:02 +81: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:02 +82: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas login correcto entra y cerrar sesión vuelve al login
+00:02 +83: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar Cancelar no abre WhatsApp
+00:02 +84: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/whatsapp_test.dart: botón Consultar Cancelar no abre WhatsApp
+00:02 +85: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas registro valida y crea la cuenta
+00:03 +86: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: Autenticación y pantallas protegidas registro valida y crea la cuenta
+00:03 +87: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos aire limpio: índice, nivel en palabras y consejo
+00:03 +88: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos aire limpio: índice, nivel en palabras y consejo
+00:03 +89: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos aire limpio: índice, nivel en palabras y consejo
+00:03 +90: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos aire limpio: índice, nivel en palabras y consejo
+00:03 +91: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos aire limpio: índice, nivel en palabras y consejo
+00:03 +92: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos aire limpio: índice, nivel en palabras y consejo
+00:04 +93: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos aire limpio: índice, nivel en palabras y consejo
+00:04 +94: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos aire limpio: índice, nivel en palabras y consejo
+00:04 +95: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-12 mapa búsqueda de direcciones con Nominatim
+00:04 +96: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-12 mapa búsqueda de direcciones con Nominatim
+00:04 +97: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD favoritos: crear, editar nota y baja lógica
+00:04 +98: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD favoritos: crear, editar nota y baja lógica
+00:05 +99: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD favoritos: crear, editar nota y baja lógica
+00:05 +100: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: HU-15 calidad del aire y consejos error simulado sinConexion: "Sin conexión a internet"
+00:05 +101: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-12 mapa tocar un marcador de farmacia abre su detalle
+00:05 +102: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint3_widget_test.dart: HU-12 mapa tocar un marcador de farmacia abre su detalle
+00:05 +103: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD recordatorios: validación, crear, editar y baja lógica
+00:05 +104: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD recordatorios: validación, crear, editar y baja lógica
+00:05 +105: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD recordatorios: validación, crear, editar y baja lógica
+00:06 +106: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD recordatorios: validación, crear, editar y baja lógica
+00:06 +107: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: CRUD recordatorios: validación, crear, editar y baja lógica
+00:06 +108: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: Recordatorio por voz el dictado llena el título y el usuario puede corregirlo
+00:06 +109: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: Recordatorio por voz el dictado llena el título y el usuario puede corregirlo
+00:06 +110: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro texto grande se aplica en toda la app
+00:06 +111: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro texto grande se aplica en toda la app
+00:06 +112: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: Recordatorio por voz permiso de micrófono negado: avisa y no cambia el título
+00:07 +113: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro alto contraste y modo oscuro cambian el tema
+00:07 +114: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: Recordatorio por voz si no entendió, pide hablar otra vez
+00:07 +115: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro las preferencias guardadas se aplican al reabrir
+00:07 +116: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/sprint4_widget_test.dart: Recordatorio por voz un error inesperado del reconocedor no rompe el formulario
+00:07 +117: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro botones ≥ 48 dp (Android) y ≥ 44 pt (iOS) · normal
+00:07 +118: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro botones ≥ 48 dp (Android) y ≥ 44 pt (iOS) · texto grande + alto contraste + oscuro
+00:08 +119: /Users/vladimirduranclaros/Mis Documentos/universidad local/APLICACIONES MOVILES/APP-PF/test/widget_test.dart: HU-05 accesibilidad y HU-06 modo oscuro contraste de texto suficiente en alto contraste
+00:08 +120: All tests passed!

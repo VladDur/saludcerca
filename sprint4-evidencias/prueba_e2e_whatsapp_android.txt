@@ -1,0 +1,9 @@
+[CAPTURA] 08_farmacia_boton_consultar_android
+[EVIDENCIA] 08_farmacia_boton_consultar_android
+[CAPTURA] 09_consulta_validacion_android
+[EVIDENCIA] 09_consulta_validacion_android
+[CAPTURA] 10_consulta_medicamento_android
+[EVIDENCIA] 10_consulta_medicamento_android
+[WHATSAPP] https://wa.me/591XXXXXXXX?text=Hola%2C%20Farmacia%20Sopocachi%20Central.%20Les%20escribo%20desde%20SaludCerca.%0AQuiero%20comprar%20este%20medicamento%3A%20Paracetamol%20500%20mg.%0A%C2%BFLo%20tienen%20disponible%20y%20cu%C3%A1l%20es%20su%20precio%3F
+01:01 +2: All tests passed!
+All tests passed.

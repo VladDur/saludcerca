@@ -1,0 +1,54 @@
+Launching integration_test/sprint4_test.dart on iPhone 17 in debug mode...
+Running Xcode build...                                          
+-[WFIsolatedShortcutRunner init] Taking sandbox extensions for execution
+-[WFIsolatedShortcutRunner init]_block_invoke Sandbox extensions acquired
+Indexing for request: <WFToolKitIndexingRequest: 0x1069ac320>, changeset: .partial(updatedCount: 0 removedCount: 1 updated: [], removed: ["com.example.saludcerca"], provenance: [VoiceShortcutClient.ToolKitIndexingReason.Changeset.Provenance.launchServicesSnapshot(<LaunchServicesSnapshot uuid=2ECE0DCE-6E15-4960-98DF-30459ED3A8B7, v=1013)> ["com.apple.mobiletimer.ClockAppIntents", "com.apple.shortcuts.runtime", "com.apple.ActivityMessagesApp", "com.apple.SpotlightSettings.SpotlightSettingsIntentsExtension", "com.apple.MusicSettingsAppIntents", "com.apple.DocumentManager.DockFolderViewService", "com.apple.Photos.PhotosUIService", "com.apple.NeighborhoodActivityConduitService.NeighborhoodActivityConduitIntentsExtension", "com.apple.GameCenter.Settings.DeviceExpertExtension", "com.apple.EscrowSecurityAlert", "com.apple.contacts.autocomplete.appintentextension", "com.apple.family.FamilyIntents", "com.apple.ClockAngel", "com.apple.HealthPrivacyService", "com.apple.GameCenterRemoteAlert", "com.apple.telephony.SettingsCellularAppIntents<…>, priority: <decode: missing data>
+Indexed: 0
+Errored: 0
+Skipped: [:]
+Finished in 0.403152s
+-[WFIsolatedShortcutRunner unaliveProcess] Releasing sandbox extensions
+Xcode build done.                                           30.6s
+[IMPORTANT:flutter/shell/platform/darwin/graphics/FlutterDarwinContextMetalImpeller.mm(45)] Using the Impeller rendering backend (Metal).
+flutter: 00:00 +0: Sprint 4 end-to-end: calidad del aire y dictado
+Syncing files to device iPhone 17...                            
+flutter: supabase.supabase_flutter: INFO: ***** Supabase init completed *****
+Syncing files to device iPhone 17...                               150ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on iPhone 17 is available at: http://127.0.0.1:51403/nQm8ple---s=/
+The Flutter DevTools debugger and profiler on iPhone 17 is available at: http://127.0.0.1:51403/nQm8ple---s=/devtools/?uri=ws://127.0.0.1:51403/nQm8ple---s=/ws
+flutter: [API] GET nominatim.openstreetmap.org/reverse -> 200 (250 ms)
+flutter: [API] GET api.open-meteo.com/v1/forecast -> 200 (654 ms)
+flutter: [API] GET air-quality-api.open-meteo.com/v1/air-quality -> 200 (1264 ms)
+flutter: [CAPTURA] 01_calidad_aire_consejos_ios
+flutter: [EVIDENCIA] 01_calidad_aire_consejos_ios
+flutter: [CAPTURA] 02_recordatorio_boton_dictar_ios
+flutter: [EVIDENCIA] 02_recordatorio_boton_dictar_ios
+flutter: [CAPTURA] 03_recordatorio_escuchando_ios
+flutter: [EVIDENCIA] 03_recordatorio_escuchando_ios
+flutter: [CAPTURA] 04_recordatorio_titulo_dictado_ios
+flutter: [EVIDENCIA] 04_recordatorio_titulo_dictado_ios
+flutter: [CAPTURA] 05_recordatorio_guardado_ios
+flutter: [EVIDENCIA] 05_recordatorio_guardado_ios
+flutter: [API] GET nominatim.openstreetmap.org/reverse -> 200 (177 ms)
+flutter: [API] GET api.open-meteo.com/v1/forecast -> 200 (609 ms)
+flutter: [API] GET air-quality-api.open-meteo.com/v1/no-existe -> 404 (1120 ms)
+flutter: [CAPTURA] 06_error_aire_404_ios
+flutter: [EVIDENCIA] 06_error_aire_404_ios
+flutter: [API] GET air-quality-api.open-meteo.com/v1/air-quality -> TIMEOUT (25 ms)
+flutter: [API] GET nominatim.openstreetmap.org/reverse -> 200 (233 ms)
+flutter: [API] GET api.open-meteo.com/v1/forecast -> 200 (610 ms)
+flutter: [CAPTURA] 07_error_aire_timeout_ios
+flutter: [EVIDENCIA] 07_error_aire_timeout_ios
+flutter: supabase.auth: INFO: Signing out user with scope: local
+flutter: 00:59 +1: (tearDownAll)
+flutter: 00:59 +2: All tests passed!
+Lost connection to device.
